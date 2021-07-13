@@ -1,9 +1,11 @@
 import React from 'react'
-
-export default function Layout() {
+import Nav from 'Components/Nav'
+import styles from 'Assets/Stylesheets/SCSS/Components/Layout.module.scss'
+export default function Layout({children}) {
     return (
-        <div>
-            
+        <div className={styles.container}>
+            <Nav/>
+            {children}
         </div>
     )
 }
