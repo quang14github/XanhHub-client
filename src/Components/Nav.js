@@ -18,7 +18,7 @@ export default function Nav() {
           <img alt="logo" src={logo} height="45"/>
         <button onClick={()=>{setShown(c=>!c)}} className={styles.navToggle}> <img alt="toggle" src={menu}/></button>
         </div>
-        <div className={`${styles.linksContainer} ${isShown?styles.visible:''}`}>
+        <div className={`${styles.linksContainer}`} style={{maxHeight:isShown?"100vh":0}}>
 
         {links.map((e)=>(<div className={styles.linkItem} key={"item-"+e.name}>
           <p>{e.name}</p>
