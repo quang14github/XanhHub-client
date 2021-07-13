@@ -1,6 +1,9 @@
 $medium-nav: var(--medium-nav);
 .container {
   padding: 0 7vw;
+  position: sticky;
+  z-index: 123123123;
+  top:0;
   background-color: var(--secondary-background-trans);
   @media screen and(max-width:500px) {
     background-color: var(--secondary-background);

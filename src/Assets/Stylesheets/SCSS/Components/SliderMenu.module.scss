@@ -1,0 +1,82 @@
+.keywords {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+.wordItem {
+  p {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+.groupWords {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  p {
+   
+    user-select: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    //border-radius: 500px;
+    white-space: nowrap;
+    @media screen and (hover: hover) {
+      opacity: 0.8;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.left,
+.right {
+  position: absolute;
+  display: flex;
+ 
+  top: 0;
+  z-index: 12;
+  height: 100%;
+img{
+    margin:0 5px;
+    border-radius: 100%;
+   
+}
+
+  border: none;
+  width: 50px;
+  align-items: center;
+  cursor: pointer;
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+}
+.left {
+  left: 0;
+  justify-content: flex-start;
+
+  background: linear-gradient(
+    to right,
+    var(--secondary-background),
+    rgba(255, 255, 255, 0)
+  );
+}
+.right {
+  right: 0;
+
+  justify-content: flex-end;
+  background: linear-gradient(
+    to left,
+    var(--secondary-background),
+    rgba(255, 255, 255, 0)
+  );
+}

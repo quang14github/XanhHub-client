@@ -31,3 +31,12 @@
   border-radius: 4px;
   background-color: var(--button-primary);
 }
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: #253526d5;;
+}
+
+::selection {
+  color: white;
+  background: #253526d5;;
+}

@@ -1,0 +1,41 @@
+.root {
+  font-size: 22px;
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--secondary-background-trans);
+  display: flex;
+  transition: all .2s;
+  border-radius: 4px;
+  overflow: hidden;
+  input {
+    width: 100%;
+    font-size: inherit;
+    background-color: transparent;
+    padding: 0 20px;
+    color: rgba(255, 255, 255, 0.61);
+  }
+  button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: unset;
+    @media screen and(hover:hover) {
+            transition: inherit;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width:950px) {
+    font-size: 1rem;
+    button,input{
+        padding:15px
+    }
+}
+@media screen and (max-width:500px) {
+    button,input{
+        padding:10px
+    }
+ }
+}

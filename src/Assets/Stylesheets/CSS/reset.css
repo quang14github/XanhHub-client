@@ -7,6 +7,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
+input:focus,input{
+  outline: none;
+  border:none;
+}
+
+
 p,
 h1,
 h2,

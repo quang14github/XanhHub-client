@@ -11,7 +11,7 @@ const routes=[
 ]
 const links=[
     {name:'Home',path:'/'},
-    {name:'Search',path:'/search'},
+    {name:'Discovery',path:'/search'},
     // {name:'Cart',path:'/'},
     // {name:'User',path:'/user'},
   ]
