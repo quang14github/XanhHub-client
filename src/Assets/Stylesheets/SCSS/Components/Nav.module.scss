@@ -1,8 +1,10 @@
 $medium-nav: var(--medium-nav);
 .container {
-  
   padding: 0 7vw;
-  background-color: var(--secondary-background);
+  background-color: var(--secondary-background-trans);
+  @media screen and(max-width:500px) {
+    background-color: var(--secondary-background);
+  }
   color: var(--primary-text);
   font-family: var(--font-primary);
   font-weight: bold;
@@ -27,20 +29,22 @@ $medium-nav: var(--medium-nav);
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 500px) {
+    overflow: hidden;
     position: absolute;
     display: none;
     padding-top: 20px;
-    top: 70px;
+    top: 90px;
     width: 100vw;
+    padding-bottom: 30px;
     left: 0;
     background-color: var(--secondary-background);
     flex-direction: column;
   }
 }
-.visible{
-    display: flex;
-    z-index: 10;
-    animation:var(--slide-down)
+.visible {
+  display: flex;
+  z-index: 10;
+  animation: var(--slide-down);
 }
 .linkItem {
   padding: 30px 15px;
@@ -65,10 +69,11 @@ $medium-nav: var(--medium-nav);
   display: flex;
   z-index: 20;
   align-items: center;
-  
-  background-color: var(--secondary-background);
 
   @media screen and (max-width: 950px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 500px) {
     justify-content: space-between;
   }
 }
