@@ -1,7 +1,8 @@
 
 const defaultState={
-    userid:null,
-    logInStatus:null,
+    userid:1,
+    logInStatus:true,
+    role:0
 
 }
 

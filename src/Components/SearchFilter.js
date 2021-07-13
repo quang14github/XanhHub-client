@@ -52,8 +52,11 @@ export default function SearchFilter({ category }) {
 
   return (
     <div className={styles.filter}>
+      
       <div className={styles.container}>
+      <p>Popular</p>
        <SliderMenu type="small" select="one" words={words} radius={500} height={40}/>
+       <p>All category</p>
        <SliderMenu type="medium" color="second" select="multiple" words={categories} radius={5} height={70}/>
       </div>
     </div>

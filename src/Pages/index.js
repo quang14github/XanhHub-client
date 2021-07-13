@@ -12,6 +12,7 @@ const routes=[
 const links=[
     {name:'Home',path:'/'},
     {name:'Discovery',path:'/search'},
+    {name:'Blog',path:'/'},
     // {name:'Cart',path:'/'},
     // {name:'User',path:'/user'},
   ]
