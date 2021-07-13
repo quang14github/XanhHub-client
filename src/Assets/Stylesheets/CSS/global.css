@@ -1,6 +1,22 @@
 @import "./reset.css";
+@import './keyframes.css';
+:root {
+  /* varialbe declaration! */
+  --primary-background: #5dc269;
+  --secondary-background: #253526;
+  --primary-text: #ffffff;
+  --button-primary: #ecb338;
+  --text-button-primary: #6d5b1c;
+  --button-secondary: #5dc269;
+  --text-button-secondary: #fff;
+
+  --banner-primary-background: #2d2418;
+
+  /* dimensions */
+  --medium-nav: 950px;
 
 
-:root{
-    /* varialbe declaration! */
+  /* animation */
+  --slide-down:slidedown .7s linear forwards;
+  --hide:hide .5s forwards linear ;
 }
