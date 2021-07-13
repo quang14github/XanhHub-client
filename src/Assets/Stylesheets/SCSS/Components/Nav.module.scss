@@ -26,7 +26,8 @@ $medium-nav: var(--medium-nav);
   justify-content: center;
   @media screen and (max-width: 500px) {
     position: absolute;
-    transition: all .5s linear;
+    // animation:var(--hide);
+    display: none;
     padding-top: 20px;
     top: 70px;
     width: 100vw;
@@ -35,7 +36,11 @@ $medium-nav: var(--medium-nav);
     flex-direction: column;
   }
 }
-
+.visible{
+    display: flex;
+    z-index: 10;
+    animation:var(--slide-down)
+}
 .linkItem {
   padding: 30px 15px;
   text-transform: uppercase;
