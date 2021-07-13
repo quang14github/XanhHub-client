@@ -1,0 +1,32 @@
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    z-index: 9999;
+    
+}
+.previewContainer{
+    position: absolute;
+    z-index: 100;
+    background-color: var(--primary-background);
+    width:100vw;
+    max-width: 500px;
+    min-height: 300px;
+    right:0%;
+    top:60px;
+}
+.group{
+    padding:15px 20px;
+    position: relative;
+    &:first-child{
+        background-color: var(--button-primary);
+    }
+    opacity: .9;
+    border-radius: 4px;
+    margin-left: 5px;
+    &:hover{
+        opacity: 1;
+    }
+}

@@ -4,6 +4,8 @@ $medium-nav: var(--medium-nav);
   padding: 0 7vw;
   background-color: var(--secondary-background);
   color: var(--primary-text);
+  font-family: var(--font-primary);
+  font-weight: bold;
 }
 .content {
   display: grid;
@@ -26,7 +28,6 @@ $medium-nav: var(--medium-nav);
   justify-content: center;
   @media screen and (max-width: 500px) {
     position: absolute;
-    // animation:var(--hide);
     display: none;
     padding-top: 20px;
     top: 70px;

@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import './keyframes.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 :root {
   /* varialbe declaration! */
   --primary-background: #5dc269;
@@ -18,5 +19,14 @@
 
   /* animation */
   --slide-down:slidedown .7s linear forwards;
-  --hide:hide .5s forwards linear ;
+  --hide:hide .2s forwards linear ;
+
+  /* fonts */
+  --font-primary:'Poppins', sans-serif;
+
+}
+.button {
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-primary);
 }

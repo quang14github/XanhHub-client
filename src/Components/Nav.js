@@ -2,13 +2,9 @@ import React from "react";
 import styles from 'Assets/Stylesheets/SCSS/Components/Nav.module.scss'
 import logo from 'Assets/Images/logo.png'
 import menu from 'Assets/Images/menu.svg'
-const links=[
-  {name:'Home',path:'/'},
-  {name:'Shop',path:'/shop'},
-  {name:'Home',path:'/product'},
-  {name:'User',path:'/user'},
-  {name:'Cart',path:'/cart'},
-]
+import UserStatus from "Components/UserStatus";
+import { Link } from "react-router-dom";
+import {links} from 'Pages'
 export default function Nav() {
   const [isShown,setShown]=React.useState(false)
   return <div className={styles.container}>
@@ -20,9 +16,17 @@ export default function Nav() {
         </div>
         <div className={`${styles.linksContainer} ${isShown?styles.visible:''}`} >
 
-        {links.map((e)=>(<div className={styles.linkItem} key={"item-"+e.name}>
+        {links.map((e)=>(
+          <Link to={e.path}>
+        <div className={styles.linkItem} key={"item-"+e.name}>
           <p>{e.name}</p>
-        </div>))}
+        </div>
+          </Link>
+
+        ))}
+       
+          <UserStatus/>
+       
         </div>
     </div>
 

@@ -7,7 +7,9 @@ function App() {
         {pages.map((page,i)=><Route exact key={"page-"+i} path={page.link} component={page.Component}>
 
         </Route>)}
-      
+        <Route path="/">
+      <h1>404!</h1>
+        </Route>
       </Switch>
     </div>
   );
