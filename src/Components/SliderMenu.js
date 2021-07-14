@@ -57,17 +57,17 @@ export default function SliderMenu({words,color="primary",type="small",select="o
           evt.preventDefault();
           if (timeout) {
             timeout = false;
+            const amount = evt.deltaY;
+            Ref.current.scrollLeft += amount * 4;
             const { scrollWidth, scrollLeft } = Ref.current;
             const { width } = Ref.current.getBoundingClientRect();
             const check = scrollWidth - (scrollLeft + width);
-            const amount = evt.deltaY;
-            Ref.current.scrollLeft += amount * 4;
             if (scrollLeft < 5) {
               setLeft(false);
             } else {
               setLeft(true);
             }
-            if (check < 5) {
+            if (check < 15) {
               setRight(false);
             } else {
               setRight(true);

@@ -20,7 +20,7 @@ export default function UserStatus() {
             
             <div 
             className={styles.group}>
-            <Link to="/user">
+            <Link to="/user/profile">
             <img src={userIcon} width="30" alt="user"/>
                 </Link>
             </div>

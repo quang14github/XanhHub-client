@@ -1,5 +1,36 @@
 .container{
-    background-color: green;
     width:100%;
     height:100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+}
+.userInfor{
+
+    p{
+        text-align: center;
+    }
+}
+.tabsContainer{
+    padding-top: 30px;
+}
+.tabItem{
+   
+    margin:5px 0;
+    text-align: left;
+}
+.mainTabs{
+    border-radius: 4px;
+    padding:15px 25px;  
+    padding-right: 0;
+    border: 1px solid gray;
+}
+.subsContainer{
+    padding:15px;
+    padding-bottom: 0;
+    p{
+        padding:10px 20px;
+        padding-right: 0;
+    
+    }
 }

@@ -1,12 +1,10 @@
 .searchBox{
-    height:400px;
+    height:200px;
     min-height: 80px;
     background-color: var(--secondary-background-trans);
     width:100%;
     position: relative;
-    @media screen and (max-width:950px) {
-       height:300px;
-    }
+   
     @media screen and (max-width:500px) {
         height:auto;
      }
@@ -14,6 +12,7 @@
 .overlay{
     background-image: url('../../../Images/bg-search.jpg');
     position: absolute;
+    background-position: bottom center;
     top:0;
     left:0;
     width:100%;

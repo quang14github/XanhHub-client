@@ -5,7 +5,7 @@ import SearchPage from "./SearchPage";
 const routes=[
     {link:'/',Component:HomePage},
     {link:'/search',Component:SearchPage},
-    {link:'/user',Component:UserPage},
+    {link:'/user/:tab',Component:UserPage},
     {link:'/shop/:shopid',Component:HomePage},
     {link:'/product/:productid',Component:ProductPage}
 ]

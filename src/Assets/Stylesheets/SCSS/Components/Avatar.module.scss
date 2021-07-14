@@ -1,0 +1,14 @@
+
+.container{
+    overflow: hidden;
+    height:120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        padding:5%;
+        height:100%;
+        width:auto;
+        border-radius: 100%;
+    }
+}

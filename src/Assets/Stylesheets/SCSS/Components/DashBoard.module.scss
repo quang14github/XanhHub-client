@@ -5,7 +5,7 @@
     max-width: 1200px;
     margin:0 auto;
     min-height:100%;
-    background-color: gray;
+    //background-color: gray;
     
 }
 .content{
@@ -15,6 +15,6 @@
     grid-template-rows: 100%;
     @media screen and(max-width:950px) {
         grid-template-columns: 1fr;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: max-content 1fr;
     }
 }
