@@ -1,13 +1,14 @@
 .formContainer {
   height: 100%;
   box-sizing: border-box;
+  padding: 0 10px;
   h2 {
     display: block;
     text-align: center;
   }
   form {
     font-size: 20px;
-    @media screen  and (max-width:1000px){
+    @media screen and (max-width: 1000px) {
       font-size: 16px;
     }
     fieldset {
@@ -16,36 +17,42 @@
       border-radius: 10px;
       legend {
         font-size: 1.2em;
-        color:gray;
-        padding:0 2px;
+        color: gray;
+        padding: 0 2px;
       }
       label {
         display: flex;
         font-size: 1em;
         padding: 1em 0;
+        min-width: 5.5em;
         font-weight: bold;
-
-        &:last-child {
-          border-bottom: none;
-        }
       }
     }
   }
 }
 .btnContainer {
-  margin: 0 40px;
+  padding-top: 10px;
+  font-size: 20px;
+  margin: 0 1.5em;
   display: flex;
   justify-content: flex-end;
   button {
-    width: 100px;
-    font-size: 20px;
+    width: 5em;
+    padding: 4px 0;
+    font-size: 1em;
     margin-left: 10px;
     border-radius: 5px;
   }
+  @media screen and (max-width: 1000px) {
+    font-size: 15px;
+    button {
+      font-size: 1.2em;
+    }
+  }
 }
 .editBtnActive {
-  color: white;
-  background-color: darkblue;
+  color: var(--text-button-primary);
+  background-color: var(--button-primary);
 }
 .none {
   display: none;
@@ -61,9 +68,9 @@
     grid-template-columns: 1fr;
   }
   input {
-    font-size:1em;
-    padding-left: 5px;
-    width: 100%;
+    margin-left: 30px;
+    font-size: 1em;
+    width: 95%;
     border: 1px solid #bdbdbc;
     border-radius: 5px;
     background-color: rgba(235, 235, 235, 0.555);
@@ -71,8 +78,12 @@
     border: 1px solid transparent;
     outline: none;
     &:disabled {
-    background-color: rgba(235, 235, 235, 0.062);
+      background-color: rgba(235, 235, 235, 0.062);
       color: rgb(88, 88, 88);
+    }
+    @media screen and (max-width: 500px) {
+      margin-left: 0;
+      width: 100%;
     }
   }
 }
