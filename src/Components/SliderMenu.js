@@ -52,13 +52,14 @@ export default function SliderMenu({words,color="primary",type="small",select="o
       };
     
       React.useEffect(() => {
-        let timeout = true;
+        //let timeout;
         const handler = (evt) => {
           evt.preventDefault();
-          if (timeout) {
-            timeout = false;
+          
+            // clearTimeout(timeout)
+            // timeout=setTimeout(() => {
             const amount = evt.deltaY;
-            Ref.current.scrollLeft += amount * 4;
+            Ref.current.scrollLeft += amount *2;
             const { scrollWidth, scrollLeft } = Ref.current;
             const { width } = Ref.current.getBoundingClientRect();
             const check = scrollWidth - (scrollLeft + width);
@@ -72,10 +73,9 @@ export default function SliderMenu({words,color="primary",type="small",select="o
             } else {
               setRight(true);
             }
-            setTimeout(() => {
-              timeout = true;
-            }, 300);
-          }
+              
+            //}, 300);
+          
         };
         Ref.current.addEventListener("wheel", handler);
       }, [Ref]);

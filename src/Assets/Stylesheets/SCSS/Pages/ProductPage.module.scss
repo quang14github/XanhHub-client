@@ -1,0 +1,36 @@
+
+
+.product{
+    width:100%;
+    max-width: 1000px;
+    margin:0 auto;
+    min-height:100%;
+    background-color: gray;
+}
+.main{
+    display: grid;
+    padding:10px;
+    grid-template-columns: 40% 60%;
+    @media screen and(max-width:800px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 50%;
+        
+
+    }
+}
+.image{
+    overflow: hidden;
+    img{
+        width:100%;
+    }
+}
+.information{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding:10px;
+    grid-template-rows: max-content 1fr max-content;
+    button{
+        font-size: 1.4rem;
+        padding:15px;
+    }
+}
