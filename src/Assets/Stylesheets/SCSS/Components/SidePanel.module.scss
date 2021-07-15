@@ -12,12 +12,23 @@
     }
 }
 .tabsContainer{
+    padding:0 20px;
     padding-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-gap: 10px;
+    @media screen and(max-width:950px) {
+        
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr;
+
+    }
+
 }
 .tabItem{
    
-    margin:5px 0;
-    text-align: left;
+    text-align: center;
 }
 .mainTabs{
     border-radius: 4px;
