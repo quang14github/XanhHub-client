@@ -1,78 +1,112 @@
 import React from "react";
 import { useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Profile.module.scss";
+const defaultInfo = {
+  name: "Nguyen Van A",
+  address: "1st Dai Co Viet, Hai Ba Trung, Ha Noi, Viet Nam",
+  password: "123456789",
+  email: "nguyenvana@gmail.com",
+  phone: "0123456789",
+};
 export default function Profile() {
-  const [Email, setEmail] = useState("nguyenvana@gmail.com");
   const [Name, setName] = useState("Nguyen Van A");
-  const [Phone, setPhone] = useState("09669696969");
   const [Address, setAddress] = useState(
     "1st Dai Co Viet, Hai Ba Trung, Ha Noi, Viet Nam"
   );
-  // test
-  const [Password, setPassword] = useState("12345");
+  const [Password, setPassword] = useState("123456789");
+  const [Email, setEmail] = useState("nguyenvana@gmail.com");
+  const [Phone, setPhone] = useState("0123456789");
   const [Mutable, setMutable] = useState(true);
+  const [Editing, setEditing] = useState(false);
+  const [BtnTitle, setBtnTitle] = useState("Edit");
+  function resetInfo(obj) {
+    setName(obj.name);
+    setAddress(obj.address);
+    setPassword(obj.password);
+    setEmail(obj.email);
+    setPhone();
+  }
+  const basicInfoInputs = [
+    { label: "Name", id: "name", type: "text", value: Name, cb: setName },
+    {
+      label: "Address",
+      id: "address",
+      type: "text",
+      value: Address,
+      cb: setAddress,
+    },
+    {
+      label: "Password",
+      id: "password",
+      type: "password",
+      value: Password,
+      cb: setPassword,
+    },
+  ];
+  const contactInfoInputs = [
+    { label: "Email", id: "email", type: "email", value: Email, cb: setEmail },
+    { label: "Phone", id: "phone", type: "tel", value: Phone, cb: setPhone },
+  ];
   return (
     <div className={styles.formContainer}>
       <h2>Personal info</h2>
+      <div className={styles.btnContainer}>
+        <button
+          className={Editing ? styles.cancelBtn : styles.none}
+          onClick={(e) => {
+            setMutable(!Mutable);
+            setEditing(!Editing);
+            setBtnTitle(Editing ? "Edit" : "Save");
+            resetInfo(defaultInfo);
+          }}
+        >
+          Cancel
+        </button>
+        <button
+          className={Editing ? styles.editBtnActive : ""}
+          onClick={(e) => {
+            setMutable(!Mutable);
+            setEditing(!Editing);
+            setBtnTitle(Editing ? "Edit" : "Save");
+          }}
+        >
+          {BtnTitle}
+        </button>
+      </div>
       <form>
-        <fieldset>
+        <fieldset className={styles.basicInfo}>
           <legend>Basic info</legend>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={Name}
-            disabled={Mutable}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <br />
-
-          <label htmlFor="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            value={Address}
-            disabled={Mutable}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-          <br />
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={Password}
-            disabled={Mutable}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          {basicInfoInputs.map((input) => (
+            <label htmlFor={input.id}>
+              <p>{input.label}</p>
+              <input
+                key={input.id}
+                type={input.type}
+                id={input.id}
+                value={input.value}
+                disabled={Mutable}
+                onChange={(e) => input.cb(e.target.value)}
+              />
+            </label>
+          ))}
         </fieldset>
-        <fieldset>
+        <fieldset className={styles.contactInfo}>
           <legend>Contact info</legend>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={Email}
-            disabled={Mutable}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <br />
-          <label htmlFor="phone">Phone:</label>
-          <input
-            type="tel"
-            id="phone"
-            value={Phone}
-            disabled={Mutable}
-            onChange={(e) => setPhone(e.target.value)}
-          />
+          {contactInfoInputs.map((input) => (
+            <label htmlFor={input.id}>
+              <p>{input.label}</p>
+              <input
+                key={input.id}
+                type={input.type}
+                id={input.id}
+                value={input.value}
+                disabled={Mutable}
+                onChange={(e) => input.cb(e.target.value)}
+              />
+            </label>
+          ))}
         </fieldset>
       </form>
-      <button
-        onClick={(e) => {
-          setMutable(!Mutable);
-        }}
-      >
-        Edit
-      </button>
     </div>
   );
 }

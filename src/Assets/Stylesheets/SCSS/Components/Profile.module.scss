@@ -1,8 +1,61 @@
 .formContainer {
-    form {
-       font-size: 25px;
-       fieldset {
-           margin: 0 20px;
-       }
+  height: 100%;
+  box-sizing: border-box;
+  h2 {
+    display: block;
+    text-align: center;
+  }
+  form {
+    margin: 0 40px;
+    fieldset {
+      padding: 0 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      legend {
+        font-size: 25px;
+      }
+      label {
+        display: flex;
+        font-size: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid #bdbdbc;
+        p {
+          width: 150px;
+        }
+        input {
+          font-size: 22px;
+          width: 500px;
+          border: 1px solid #bdbdbc;
+          border-radius: 3px;
+          background-color: rgb(235, 235, 235);
+          &:disabled {
+            background-color: transparent;
+            color: black;
+            border: 1px solid white;
+          }
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
     }
+  }
+}
+.btnContainer {
+  margin: 0 40px;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    width: 100px;
+    font-size: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+}
+.editBtnActive {
+  color: white;
+  background-color: darkblue;
+}
+.none {
+  display: none;
 }
