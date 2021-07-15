@@ -6,34 +6,25 @@
     text-align: center;
   }
   form {
-    margin: 0 40px;
+    font-size: 20px;
+    @media screen  and (max-width:1000px){
+      font-size: 16px;
+    }
     fieldset {
-      padding: 0 20px;
-      margin-bottom: 30px;
+      padding: 10px 20px;
+      margin-bottom: 20px;
       border-radius: 10px;
       legend {
-        font-size: 25px;
+        font-size: 1.2em;
+        color:gray;
+        padding:0 2px;
       }
       label {
         display: flex;
-        font-size: 20px;
-        padding: 20px 0;
-        border-bottom: 1px solid #bdbdbc;
-        p {
-          width: 150px;
-        }
-        input {
-          font-size: 22px;
-          width: 500px;
-          border: 1px solid #bdbdbc;
-          border-radius: 3px;
-          background-color: rgb(235, 235, 235);
-          &:disabled {
-            background-color: transparent;
-            color: black;
-            border: 1px solid white;
-          }
-        }
+        font-size: 1em;
+        padding: 1em 0;
+        font-weight: bold;
+
         &:last-child {
           border-bottom: none;
         }
@@ -58,4 +49,30 @@
 }
 .none {
   display: none;
+}
+
+.formGroup {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr;
+  padding: 5px;
+  @media screen and (max-width: 500px) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  input {
+    font-size:1em;
+    padding-left: 5px;
+    width: 100%;
+    border: 1px solid #bdbdbc;
+    border-radius: 5px;
+    background-color: rgba(235, 235, 235, 0.555);
+
+    border: 1px solid transparent;
+    outline: none;
+    &:disabled {
+    background-color: rgba(235, 235, 235, 0.062);
+      color: rgb(88, 88, 88);
+    }
+  }
 }

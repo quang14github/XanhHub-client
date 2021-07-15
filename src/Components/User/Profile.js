@@ -77,24 +77,29 @@ export default function Profile() {
         <fieldset className={styles.basicInfo}>
           <legend>Basic info</legend>
           {basicInfoInputs.map((input) => (
-            <label htmlFor={input.id}>
-              <p>{input.label}</p>
-              <input
-                key={input.id}
-                type={input.type}
-                id={input.id}
-                value={input.value}
-                disabled={Mutable}
-                onChange={(e) => input.cb(e.target.value)}
-              />
+            <div className={styles.formGroup}>
+              <label htmlFor={input.id}>
+              {input.label}
+             
             </label>
+             <input
+             key={input.id}
+             type={input.type}
+             id={input.id}
+             value={input.value}
+             disabled={Mutable}
+             onChange={(e) => input.cb(e.target.value)}
+           />
+            </div>
           ))}
         </fieldset>
         <fieldset className={styles.contactInfo}>
           <legend>Contact info</legend>
           {contactInfoInputs.map((input) => (
-            <label htmlFor={input.id}>
-              <p>{input.label}</p>
+            <div className={styles.formGroup}>
+              <label htmlFor={input.id}>
+             {input.label}
+             </label>
               <input
                 key={input.id}
                 type={input.type}
@@ -103,7 +108,7 @@ export default function Profile() {
                 disabled={Mutable}
                 onChange={(e) => input.cb(e.target.value)}
               />
-            </label>
+            </div>
           ))}
         </fieldset>
       </form>
