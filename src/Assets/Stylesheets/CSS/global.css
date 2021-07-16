@@ -1,6 +1,7 @@
 @import "./reset.css";
 @import './keyframes.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@500&display=swap');
 :root {
   /* varialbe declaration! */
   --primary-background: #5dc269;
@@ -11,7 +12,7 @@
   --text-button-primary: #6d5b1c;
   --button-secondary: #5dc269;
   --text-button-secondary: #fff;
-
+  --text-background: #63b96d86;
   --banner-primary-background: #2d2418;
 
   /* dimensions */
@@ -21,9 +22,12 @@
   /* animation */
   --slide-down:slidedown .7s linear forwards;
   --hide:hide .2s forwards linear ;
+  --appear: text 1.1s ease forwards;
+  --opacity: opa 5s linear forwards;
 
   /* fonts */
   --font-primary:'Poppins', sans-serif;
+  --font-banner:'Bebas Neue', cursive;
 
 }
 .button {

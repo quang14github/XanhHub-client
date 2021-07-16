@@ -1,0 +1,114 @@
+// mobile : 950px;
+.container{
+    
+    width:100%;
+    
+    background-color: gray;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr;
+    @media screen  and (max-width:950px){
+        grid-template-columns: 1fr;
+    grid-template-rows: max-content 29vh;
+    }
+}
+.item{
+    --height:40vw;
+    --width:100vw;
+    animation: var(--opacity);
+    width:calc(var(--height) * 1.7);
+    height: var(--height);
+    //background-image: url('../../../Images/bg1.jpg');
+    background-position: center;
+    background-size: cover;
+    @media screen  and (max-width:950px){
+       width:var(--width);
+       height: calc(var(--width) * .5);
+    }
+   
+}
+.text{
+    background-color: var(--secondary-background-trans);
+    display: grid;
+    overflow: hidden;
+    grid-template-rows: 1fr max-content;
+    font-family: var(--font-banner);
+   
+    
+    
+}
+.nav{
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    padding:25px 15%;
+    color:white;
+    *{
+        user-select: none;
+    }
+    p{
+        cursor: pointer;
+        transition: all .2s;
+        &:hover{
+            color:var(--button-primary);
+        }
+    }
+
+}
+.wrapper{
+    font-size: 5vw;
+   
+    padding-left:10%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    @media screen  and (max-width:950px){
+        font-size: 7vw;
+        padding:3vh 0;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+        p{
+            margin-right: 10px;
+        }
+     }
+}
+.textItem{
+    opacity: 0;
+    font-size: 1em;
+    font-weight: bold;
+    animation:var(--appear);
+    color:var(--button-primary);
+    text-shadow: 3px 3px var(--text-button-primary) ;
+    @for $i from 0 to 5 {
+        &:nth-child(#{$i}){
+            animation-delay: $i * 800ms;
+            padding-left: $i * 10% - 10%;
+        }
+    }
+    @media screen  and (max-width:950px){
+        padding-left:0 !important;
+     }
+}
+.textBig{
+    font-size: 1.3em;
+    color:var(--primary-background);
+    text-shadow: 3px 3px var(--text-background) ;
+}
+.indicatorWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.indicator{
+    width:5px;
+    height:5px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.192);
+    margin:0 20px;
+    transition: all .2s;
+}
+.indiNow{
+    background-color: rgb(255, 255, 255);
+}

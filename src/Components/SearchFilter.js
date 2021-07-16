@@ -6,18 +6,7 @@ const words = [
   { name: "hoa quả xanh", tag: "" },
   { name: "đồ dùng tái chế", tag: "" },
   { name: "đồ giấy", tag: "" },
-  { name: "rau sạch", tag: "" },
-  { name: "hoa quả xanh", tag: "" },
-  { name: "đồ dùng tái chế", tag: "" },
-  { name: "đồ giấy", tag: "" },
-  { name: "rau sạch", tag: "" },
-  { name: "hoa quả xanh", tag: "" },
-  { name: "đồ dùng tái chế", tag: "" },
-  { name: "đồ giấy", tag: "" },
-  { name: "rau sạch", tag: "" },
-  { name: "hoa quả xanh", tag: "" },
-  { name: "đồ dùng tái chế", tag: "" },
-  { name: "đồ giấy", tag: "" },
+
 ];
 
 const categories=[
@@ -27,22 +16,7 @@ const categories=[
   {name:'Household appliance',tag:"household"},
   {name:'Vegetables',tag:'veget'},
   {name:'Paper stuff',tag:'paper'},
-  {name:"All",tag:'all'},
-  {name:"Grocery",tag:'grocery'},
-  {name:'Fruit',tag:'fruit'},
-  {name:'Household appliance',tag:"household"},
-  {name:'Vegetables',tag:'veget'},
-  {name:'Paper stuff',tag:'paper'}, {name:"All",tag:'all'},
-  {name:"Grocery",tag:'grocery'},
-  {name:'Fruit',tag:'fruit'},
-  {name:'Household appliance',tag:"household"},
-  {name:'Vegetables',tag:'veget'},
-  {name:'Paper stuff',tag:'paper'}, {name:"All",tag:'all'},
-  {name:"Grocery",tag:'grocery'},
-  {name:'Fruit',tag:'fruit'},
-  {name:'Household appliance',tag:"household"},
-  {name:'Vegetables',tag:'veget'},
-  {name:'Paper stuff',tag:'paper'},
+
 
   //
   

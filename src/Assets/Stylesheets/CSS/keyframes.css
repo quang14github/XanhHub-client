@@ -1,8 +1,29 @@
-@keyframes slidedown{
-    from {
-        max-height: 0;
-    }
-    to{
-        max-height: 100vh;
-    }
+@keyframes slidedown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 100vh;
+  }
+}
+@keyframes text {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes opa {
+  from {
+    transform: scale(1.05);
+
+    filter: saturate(.7);
+  }
+  to {
+    transform: scale(1);
+    filter: saturate(1.3);
+  }
 }
