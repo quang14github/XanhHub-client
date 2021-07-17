@@ -1,7 +1,7 @@
 
 ### `yarn install`
 
-Install dependancies, run this before other commands.
+Install dependencies, run this before other commands.
 
 ### `yarn start`
 
