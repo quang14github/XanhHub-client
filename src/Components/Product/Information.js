@@ -11,7 +11,7 @@ const iconURL = [
 export default function ProductInformation() {
   const [NumItem, setNumItem] = useState("1");
   return (
-    <>
+    <div className={styles.main}>
       <div className={styles.image}>
         <img
           src="https://d13wriz42ny3t5.cloudfront.net/production/2017/08/23230751/love-bottle-power-of-words-recycled-glass-water-bottle.jpg"
@@ -19,7 +19,7 @@ export default function ProductInformation() {
         />
       </div>
 
-      <section className={styles.information}>
+      <div className={styles.information}>
         <p className={styles.company}>LOVE BOTTLE</p>
         <h2 className={styles.name}>Power of Words</h2>
         <div className={styles.starRating}>
@@ -32,7 +32,7 @@ export default function ProductInformation() {
           />
         </div>
         <p className={styles.totalReview}>(142 customer review)</p>
-        <p className={styles.price}>$: 24.99</p>
+        <p className={styles.price}>$24.99</p>
         <div className={styles.addContainer}>
           <p className={styles.earnPoint}>
             EARN UP TO <span>24 XANHHUB POINTS</span> FOR THIS PURCHASE!
@@ -72,7 +72,7 @@ export default function ProductInformation() {
           <a href=" ">Product Specifications</a>
           <a href=" ">Learn More About Love Bottle</a>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
