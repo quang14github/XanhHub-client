@@ -68,9 +68,9 @@ export default function ProductInformation() {
         </p>
         <div className={styles.jump}>
           <p className={styles.goTo}>GO TO:</p>
-          <a href=" ">Sustainability Features</a>
-          <a href=" ">Product Specifications</a>
-          <a href=" ">Learn More About Love Bottle</a>
+          <a href="#feature">Sustainability Features</a>
+          <a href="#spec">Product Specifications</a>
+          <a href="#company">Learn More About Love Bottle</a>
         </div>
       </div>
     </div>

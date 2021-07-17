@@ -1,0 +1,91 @@
+.bar {
+  background-image: url("https://earthhero.com/wp-content/themes/earthhero/images/product-bar-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 0;
+  h1 {
+    color: var(--primary-text);
+    font-size: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    @media screen and (max-width: 1000px) {
+      padding-left: 20px;
+    }
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  form {
+    margin-top: 20px;
+    padding: 25px 30px;
+    border: 1px solid gray;
+    input,
+    label {
+      display: block;
+    }
+    input,
+    textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      background-color: #dbe6eb;
+      padding: 10px;
+      font-size: 18px;
+    }
+  }
+  .shareYourThought {
+    letter-spacing: 3px;
+    font-size: 35px;
+    color: #014788;
+    padding-bottom: 20px;
+  }
+  button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 3px;
+    color: var(--text-button-secondary);
+    background-color: var(--button-secondary);
+  }
+  @media screen and (max-width: 1000px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.reviewSection {
+  .others {
+    letter-spacing: 3px;
+    color: #014788;
+    font-size: 25px;
+    padding: 10px 0;
+  }
+}
+.reviewContainer {
+  border: 1px solid gray;
+  border-bottom: none;
+}
+.review {
+  padding: 15px;
+  border-bottom: 1px solid gray;
+}
+.title {
+  color: #014788;
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+.name,
+.date {
+  color: #8f8f8f;
+  font-style: italic;
+}
+.comment {
+  padding-top: 10px;
+}
+.hidden {
+  display: none;
+}

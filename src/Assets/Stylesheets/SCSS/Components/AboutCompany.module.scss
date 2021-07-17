@@ -1,0 +1,76 @@
+* {
+  font-family: sans-serif;
+}
+.bar {
+  background-image: url("https://earthhero.com/wp-content/themes/earthhero/images/sustainability-bar-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px 0;
+  h1 {
+    color: var(--primary-text);
+    font-size: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    @media screen and (max-width: 1000px) {
+      padding-left: 20px;
+    }
+  }
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 40px;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://d13wriz42ny3t5.cloudfront.net/production/2017/08/23230657/love-bottle-who-they-are.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  img {
+    width: 70%;
+  }
+}
+.content {
+  background-color: #f3f2f1;
+  padding: 50px;
+  h1 {
+    font-weight: 200;
+    color: #3f809a;
+    letter-spacing: 1.5px;
+    font-size: 25px;
+  }
+  p {
+    padding: 15px 0;
+    line-height: 25px;
+    color: #868686;
+    font-size: 15px;
+  }
+  button {
+    border-radius: 4px;
+    border-color: var(--button-secondary);
+    background-color: var(--button-secondary);
+    color: var(--text-button-secondary);
+    padding: 8px 15px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    line-height: 15px;
+    font-size: 12px;
+    &:hover {
+      border-color: var(--text-button-secondary);
+      background-color: var(--text-button-secondary);
+      color: var(--button-secondary);
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .content {
+    padding: 20px;
+  }
+}
