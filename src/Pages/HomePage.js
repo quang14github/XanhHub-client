@@ -15,9 +15,12 @@ export default function HomePage() {
                     <SmallBanner/>
                     </div>
                 </div>
-                <div className={styles.latestProducts}>
-                    <h1>Latest</h1>
+                <div className={styles.groupProducts}>
+                    <h1 className={styles.title}>Latest</h1>
                     <ProductList/>
+                    <h1 className={styles.title}>Best Salers</h1>
+                    <ProductList/>
+                   
                 </div>
         </Layout>
     )

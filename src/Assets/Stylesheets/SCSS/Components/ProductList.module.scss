@@ -1,0 +1,48 @@
+
+.container{
+   
+   overflow: hidden;
+   margin: 0 auto;
+  padding:0 20px;
+  @media screen and (max-width:600px) {
+    padding:0 5px;
+  }
+}
+.product{
+  background-color: white;
+    height:100%;
+    width:100%;
+   
+    padding:15px 10px;
+    border:1px solid rgba(128, 128, 128, 0.103);
+    text-align: center;
+    margin-right: 5px;
+    border-radius: 4px;
+    display: grid;
+    grid-template-rows: 1fr max-content max-content;
+    p{
+        padding:5px 0;
+        font-size: .8em;
+    }
+    img{
+        width:100%;
+        object-fit: cover;
+
+    }
+
+}
+
+.price{
+    color:green;
+}
+.Swiper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,200px);
+  grid-template-rows: 300px;
+  width:100%;
+  @media screen and (max-width:600px) {
+    grid-template-columns: repeat(auto-fit,150px);
+  grid-template-rows: 250px;
+  }
+  
+}

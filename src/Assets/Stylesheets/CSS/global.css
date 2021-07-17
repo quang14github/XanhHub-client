@@ -28,6 +28,9 @@
   --font-primary: "Poppins", sans-serif;
   --font-banner: "Bebas Neue", cursive;
 }
+body{
+  font-family: var(--font-primary);
+}
 .button {
   border: none;
   border-radius: 4px;
@@ -43,3 +46,21 @@
   color: white;
   background: #253526d5;
 }
+.swiper-button-next::after{
+display: none;
+ 
+
+}
+.swiper-button-prev::after{
+  display: none;
+   
+  
+  }
+  .swiper-button-prev , .swiper-button-next{
+    color:gray;
+    background-color: white;
+    width:40px;
+    height:40px;
+    border-radius: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }

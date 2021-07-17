@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import 'swiper/swiper.scss';
 import "Assets/Stylesheets/CSS/global.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
