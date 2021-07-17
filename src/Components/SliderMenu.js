@@ -10,7 +10,7 @@ export default function SliderMenu({words,color="primary",type="small",select="o
    if(Ref.current){
     const { scrollWidth } = Ref.current;
     const { width } = Ref.current.getBoundingClientRect();
-    if(scrollWidth>width){
+    if(scrollWidth -1 > width ){
         setRight(true)
     }
    }

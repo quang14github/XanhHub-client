@@ -1,0 +1,19 @@
+
+
+.groupBanners{
+    padding:30px 15px;
+    background-color: var(--secondary-background-trans);
+    color:white;
+}
+.content{
+    display: grid;
+    max-width: 1100px;
+    grid-template-columns: repeat(3,1fr);
+    margin:0 auto;
+    grid-gap: 20px;
+    @media screen and (max-width:800px) {
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: 1fr;
+    }
+
+}

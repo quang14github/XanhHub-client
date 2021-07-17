@@ -12,7 +12,7 @@
 }
 .groupWords {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   scroll-behavior: smooth;
   position: relative;
@@ -57,9 +57,9 @@ img{
   width: 50px;
   align-items: center;
   cursor: pointer;
-  @media screen and (max-width: 550px) {
-    display: none;
-  }
+  // @media screen and (max-width: 550px) {
+  //   display: none;
+  // }
 }
 .left {
   left: 0;

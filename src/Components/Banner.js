@@ -10,7 +10,7 @@ const data = [
     title: [
       { text: "We comsume", isBig: false },
       { text: "Green", isBig: true },
-      { text: "♻️ ♻️ ♻️", isBig: true },
+      { text: "♻️", isBig: true },
     ],
   },
   {
