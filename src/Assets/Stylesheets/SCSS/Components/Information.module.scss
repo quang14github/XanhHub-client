@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr;
   padding: 0 0 10px 10px;
-  grid-template-rows: max-content 1fr max-content;
+  grid-template-rows: max-content max-content max-content;
   button {
     font-size: 15px;
     font-weight: bold;
