@@ -63,7 +63,7 @@ const specs = [
 export default function ListInfo() {
   return (
     <>
-      <section className={styles.section}>
+      <section className={styles.section} id="feature">
         <div className={`${styles.bar} ${styles.featureBar}`}>
           <h1>SUSTAINABILITY FEATURES</h1>
         </div>
@@ -83,7 +83,7 @@ export default function ListInfo() {
           ))}
         </div>
       </section>
-      <section className={styles.section}>
+      <section className={styles.section} id="spec">
         <div className={`${styles.bar} ${styles.specBar}`}>
           <h1>PRODUCT SPECIFICATIONS</h1>
         </div>
