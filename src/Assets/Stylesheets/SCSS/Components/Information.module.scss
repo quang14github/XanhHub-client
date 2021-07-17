@@ -1,0 +1,120 @@
+.image {
+  overflow: hidden;
+  padding-right: 30px;
+  img {
+    width: 100%;
+  }
+}
+.information {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 0 10px 10px;
+  grid-template-rows: max-content 1fr max-content;
+  button {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--button-secondary);
+    color: var(--text-button-secondary);
+  }
+}
+.company {
+  color: gray;
+}
+.name {
+  padding: 5px 0;
+}
+.price {
+  padding: 10px 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+.addContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #eeeeee;
+  padding: 20px;
+  border-radius: 10px;
+}
+.earnPoint {
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  width: 80%;
+  color: var(--button-secondary);
+  span {
+    font-weight: bold;
+  }
+}
+.form {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+}
+.num {
+  font-size: 17px;
+  font-weight: bold;
+  padding: 14px 0 14px 15px;
+  width: 70px;
+  text-align: center;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.freeShip {
+  color: #013f7a;
+  font-weight: bold;
+  text-align: center;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  padding: 5px 20px 10px 20px;
+  .iconImage {
+    margin: 5px;
+    height: 65px;
+    width: 65px;
+    img {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    justify-content: space-between;
+  }
+}
+.description {
+  padding-bottom: 25px;
+  font-size: 1em;
+}
+.jump {
+  line-height: 25px;
+  a {
+    display: block;
+    color: var(--button-secondary);
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  .goTo {
+    color: #013f7a;
+  }
+}
+@media screen and (max-width: 720px) {
+  .company,
+  .totalReview,
+  .price,
+  .name,
+  .description,
+  .jump {
+    text-align: center;
+  }
+  .company {
+    padding-top: 20px;
+  }
+  .starRating {
+    display: flex;
+    justify-content: center;
+  }
+}
