@@ -57,6 +57,7 @@ export default function Review() {
           </label>
           <input type="email" />
           <button
+            className={styles.saveReview}
             onClick={() => {
               setReview(false);
               alert("Your review has been added!");
