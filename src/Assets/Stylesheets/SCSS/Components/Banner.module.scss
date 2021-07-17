@@ -57,9 +57,9 @@
 .wrapper{
     font-size: 6vw;
    
-    padding-left:10%;
+    
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     position: relative;
@@ -80,16 +80,14 @@
     animation:var(--appear);
     color:var(--button-primary);
     white-space: nowrap;
+    
     text-shadow: 3px 3px var(--text-button-primary) ;
     @for $i from 0 to 5 {
         &:nth-child(#{$i}){
             animation-delay: $i * 800ms;
-            padding-left: $i * 10% - 10%;
         }
     }
-    @media screen  and (max-width:950px){
-        padding-left:0 !important;
-     }
+   
 }
 .textBig{
     font-size: 1.3em;
