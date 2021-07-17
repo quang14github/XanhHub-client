@@ -1,6 +1,7 @@
 .bar {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 15px 0;
   h1 {
     color: var(--primary-text);
@@ -44,5 +45,6 @@
   li {
     margin: 5px;
     color: gray;
+    font-size: 15px;
   }
 }
