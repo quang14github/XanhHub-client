@@ -52,6 +52,10 @@
     color: var(--text-button-secondary);
     background-color: var(--button-secondary);
   }
+  .saveReview {
+    color: var(--text-button-primary);
+    background-color: var(--button-primary);
+  }
   @media screen and (max-width: 1000px) {
     padding-left: 20px;
     padding-right: 20px;
