@@ -4,7 +4,7 @@ import products from 'Assets/JS/products'
 export default function ProductList({rows,pagination=false}) {
     return (
         <div className={styles.container}>
-            {products.products.map(e=><div key={e.id}>
+            {products.map(e=><div key={e.id}>
                 <ProductItem data={e}/>
                 
             </div>)}
@@ -15,12 +15,8 @@ export default function ProductList({rows,pagination=false}) {
 
 const ProductItem=({data})=>{
     const [img,setImg]=React.useState('')
-    React.useEffect(()=>{
-        console.log(data.thumbnail);
-    },[data.thumbnail])
-   
+    
     return <div >
         
     </div>
 }
-const 
