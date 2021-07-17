@@ -22,13 +22,15 @@ export default function ProductInformation() {
       <section className={styles.information}>
         <p className={styles.company}>LOVE BOTTLE</p>
         <h2 className={styles.name}>Power of Words</h2>
-        <ReactStars
-          value={4.5}
-          activeColor="#5dc269"
-          isHalf={true}
-          size={22}
-          edit={false}
-        />
+        <div className={styles.starRating}>
+          <ReactStars
+            value={4.5}
+            activeColor="#5dc269"
+            isHalf={true}
+            size={22}
+            edit={false}
+          />
+        </div>
         <p className={styles.totalReview}>(142 customer review)</p>
         <p className={styles.price}>$: 24.99</p>
         <div className={styles.addContainer}>

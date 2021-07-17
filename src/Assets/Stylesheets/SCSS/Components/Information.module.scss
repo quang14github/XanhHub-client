@@ -8,7 +8,7 @@
 .information {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 10px 0 10px 10px;
+  padding: 0 0 10px 10px;
   grid-template-rows: max-content 1fr max-content;
   button {
     font-size: 15px;
@@ -22,6 +22,9 @@
 }
 .company {
   color: gray;
+}
+.name {
+  padding: 5px 0;
 }
 .price {
   padding: 10px 0;
@@ -96,5 +99,22 @@
   }
   .goTo {
     color: #013f7a;
+  }
+}
+@media screen and (max-width: 720px) {
+  .company,
+  .totalReview,
+  .price,
+  .name,
+  .description,
+  .jump {
+    text-align: center;
+  }
+  .company {
+    padding-top: 20px;
+  }
+  .starRating {
+    display: flex;
+    justify-content: center;
   }
 }
