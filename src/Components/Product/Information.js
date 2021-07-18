@@ -25,7 +25,7 @@ export default function ProductInformation() {
         <div className={styles.starRating}>
           <ReactStars
             value={4.5}
-            activeColor="#5dc269"
+            activeColor="#ecb338"
             isHalf={true}
             size={22}
             edit={false}

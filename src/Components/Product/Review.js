@@ -33,9 +33,11 @@ export default function Review() {
         <p className={styles.shareYourThought}>Share your thoughts!</p>
         <button onClick={() => setReview(!Review)}>LEAVE A REVIEW</button>
         <form
-          className={Review ? "" : styles.hidden}
+          className={Review ? styles.form : styles.hidden}
           onSubmit={(e) => {
             e.preventDefault();
+            setReview(false);
+            alert("Your review has been added!");
           }}
         >
           <label htmlFor="title">Title (optional)</label>
@@ -56,14 +58,7 @@ export default function Review() {
             Email
           </label>
           <input type="email" />
-          <button
-            onClick={() => {
-              setReview(false);
-              alert("Your review has been added!");
-            }}
-          >
-            SAVE REVIEW
-          </button>
+          <button className={styles.saveReview}>SAVE REVIEW</button>
         </form>
         <div className={styles.reviewSection}>
           <p className={styles.others}>What others are saying</p>
