@@ -1,0 +1,92 @@
+
+
+.container{
+    width:100%;
+    min-height: 80vh;
+    background-image: url('../../../Images/main-banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+.overlay{
+
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height:100%;
+        top:0;
+        left:0;
+        background-color: var( --secondary-background-trans);
+}
+.content{
+    z-index: 5;
+    padding:20px 5vw;
+    position: relative;
+}
+.PlaceHolder{
+    text-align: center;
+    color:white;
+    font-weight: lighter;
+    position: relative;
+}
+.title{
+   
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10vh;
+    width: 100%;
+    font-size: 3vw;
+    font-family: var(--font-banner);
+    letter-spacing: 1.5px;
+    @media screen and (max-width:1000px) {
+        flex-direction: column;
+        align-items: center;
+        font-size: 5vw;
+    }
+    h2{
+        opacity: 0;
+        animation-delay: 300ms;
+        color:var(--button-primary);
+        animation:var(--appear);
+
+    }
+    h1{
+        color:var(--primary-background)
+    }
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding-top: 5vh;
+    padding-left: 4vw;
+    @media screen and (max-width:1000px) {
+       text-align: center;
+    }
+    h1{
+        opacity: 0;
+        animation:var(--appear);
+        @for $i from 0 to 5 {
+            &:nth-child(#{$i}){
+                animation-delay: $i * 900ms;
+            }
+        }
+    }
+}
+.paragraph{
+    color:var(--button-primary);
+    font-size: 2vw;
+    padding:0 10%;
+    margin: 0 auto;
+    opacity: 0;
+    animation:var(--appear);
+    animation-delay: 3000ms;
+text-align: center;
+    @media screen and (max-width:1000px) {
+        padding: 0 3%;
+        font-size: 4vw;
+    }
+    padding-top: 5vh !important;
+}

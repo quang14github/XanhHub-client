@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Banner.module.scss";
 const team = require("Assets/Images/bg1.jpg");
-const bg2 = require("Assets/Images/slider-2.jpg");
+const bg2 = require("Assets/Images/main-banner.jpg");
 const bg3 = require("Assets/Images/slider-3.jpg");
 
 const data = [
