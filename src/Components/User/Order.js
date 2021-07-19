@@ -31,12 +31,20 @@ export default function Order() {
           </div>
         ))}
       </div>
+      <Switch>
+        <Route exact path="/user/order/processing">
       <Processing />
+
+        </Route>
+        <Route exact path="/user/order/complete">
       <Completed />
+
+        </Route>
+        <Route exact path="/user/order/canceled">
       <Canceled />
-      {/* <Switch>
-        <Route exact path="/user/order/processing"></Route>
-      </Switch> */}
+
+        </Route>
+      </Switch>
     </div>
   );
 }

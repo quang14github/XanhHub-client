@@ -11,7 +11,7 @@ export default function MainPanel() {
         <Route exact path="/user/account">
           <Profile />
         </Route>
-        <Route exact path="/user/order">
+        <Route  path="/user/order">
           <Order />
         </Route>
         <Route exact path="/user/logout">
