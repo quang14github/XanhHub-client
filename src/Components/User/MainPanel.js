@@ -8,7 +8,7 @@ export default function MainPanel() {
   return (
     <div className={styles.container}>
       <Switch>
-        <Route exact path="/user/account">
+        <Route exact path="/user/account/me">
           <Profile />
         </Route>
         <Route  path="/user/order">

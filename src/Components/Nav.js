@@ -1,6 +1,6 @@
 import React from "react";
 import styles from 'Assets/Stylesheets/SCSS/Components/Nav.module.scss'
-import logo from 'Assets/Images/logo.png'
+import logo from 'Assets/Images/XanhHub.png'
 import menu from 'Assets/Images/menu.svg'
 import UserStatus from "Components/UserStatus";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ export default function Nav() {
     <div className={styles.content}>
         <div className={styles.logoContainer}>
           
-          <img alt="logo" src={logo} height="45"/>
+          <img className={styles.logo} alt="logo" src={logo}/>
         <button onClick={()=>{setShown(c=>!c)}} className={styles.navToggle}> <img alt="toggle" src={menu}/></button>
         </div>
         <div className={`${styles.linksContainer} ${isShown?styles.visible:''}`} >

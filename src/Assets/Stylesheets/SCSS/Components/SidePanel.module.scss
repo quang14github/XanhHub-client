@@ -33,12 +33,16 @@
   border-radius: 4px;
   padding: 15px 0;
   position: relative;
+
+  transition: all 0.3s;
   cursor: pointer;
   &::before {
     transform: scaleX(0);
     transform-origin: bottom right;
   }
-
+  &:hover {
+    color: white;
+  }
   &:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
