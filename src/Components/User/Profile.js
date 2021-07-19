@@ -49,47 +49,20 @@ export default function Profile() {
   ];
   return (
     <div className={styles.formContainer}>
-      <h2>Personal info</h2>
-      <div className={styles.btnContainer}>
-        <button
-          className={Editing ? styles.cancelBtn : styles.none}
-          onClick={(e) => {
-            setMutable(!Mutable);
-            setEditing(!Editing);
-            setBtnTitle(Editing ? "Edit" : "Save");
-            resetInfo(defaultInfo);
-          }}
-        >
-          Cancel
-        </button>
-        <button
-          className={Editing ? styles.editBtnActive : ""}
-          onClick={(e) => {
-            setMutable(!Mutable);
-            setEditing(!Editing);
-            setBtnTitle(Editing ? "Edit" : "Save");
-          }}
-        >
-          {BtnTitle}
-        </button>
-      </div>
       <form>
         <fieldset className={styles.basicInfo}>
           <legend>Basic info</legend>
           {basicInfoInputs.map((input) => (
             <div className={styles.formGroup}>
-              <label htmlFor={input.id}>
-              {input.label}
-             
-            </label>
-             <input
-             key={input.id}
-             type={input.type}
-             id={input.id}
-             value={input.value}
-             disabled={Mutable}
-             onChange={(e) => input.cb(e.target.value)}
-           />
+              <label htmlFor={input.id}>{input.label}</label>
+              <input
+                key={input.id}
+                type={input.type}
+                id={input.id}
+                value={input.value}
+                disabled={Mutable}
+                onChange={(e) => input.cb(e.target.value)}
+              />
             </div>
           ))}
         </fieldset>
@@ -97,9 +70,7 @@ export default function Profile() {
           <legend>Contact info</legend>
           {contactInfoInputs.map((input) => (
             <div className={styles.formGroup}>
-              <label htmlFor={input.id}>
-             {input.label}
-             </label>
+              <label htmlFor={input.id}>{input.label}</label>
               <input
                 key={input.id}
                 type={input.type}
@@ -112,6 +83,29 @@ export default function Profile() {
           ))}
         </fieldset>
       </form>
+      <div className={styles.btnContainer}>
+        <button
+          className={Editing ? styles.cancelBtn : styles.none}
+          onClick={(e) => {
+            setMutable(!Mutable);
+            setEditing(!Editing);
+            setBtnTitle(Editing ? "EDIT" : "SAVE CHANGES");
+            resetInfo(defaultInfo);
+          }}
+        >
+          CANCEL
+        </button>
+        <button
+          className={Editing ? styles.editBtnActive : styles.editBtn}
+          onClick={(e) => {
+            setMutable(!Mutable);
+            setEditing(!Editing);
+            setBtnTitle(Editing ? "EDIT" : "SAVE CHANGES");
+          }}
+        >
+          {BtnTitle}
+        </button>
+      </div>
     </div>
   );
 }

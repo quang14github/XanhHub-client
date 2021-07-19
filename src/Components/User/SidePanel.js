@@ -8,11 +8,12 @@ const tabs = [
   { name: "Orders", id: "order" },
   { name: "Logout", id: "logout" },
 ];
-export default function SidePanel(props) {
+export default function SidePanel() {
   const url = useHistory();
+  const [Active, setActive] = useState();
   return (
     <div className={styles.container}>
-      <div className={styles.userInfor}>
+      <div className={styles.userInfo}>
         <Avatar
           image="https://cdn.luxe.digital/media/2020/05/18164558/best-short-haircuts-men-high-tight-2-luxe-digital.jpg"
           alt="avatar"
@@ -22,11 +23,16 @@ export default function SidePanel(props) {
         {tabs.map((e) => (
           <div key={e.id} className={styles.tabItem}>
             <p
-              className={styles.mainTabs}
+              className={
+                Active === e.id
+                  ? `${styles.mainTabActive} ${styles.mainTab}`
+                  : styles.mainTab
+              }
               onClick={() => {
                 url.push(`/user/${e.id}`);
-                props.changeTitle(e.name);
+                setActive(e.id);
               }}
+              onMouseOver={() => setActive()}
             >
               {e.name}
             </p>

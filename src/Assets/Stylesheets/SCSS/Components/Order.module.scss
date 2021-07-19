@@ -13,14 +13,13 @@
   padding: 15px;
   border: 2px solid transparent;
   transition: all 0.1s;
-  border-bottom: 2px solid gray;
   border-radius: 7px 7px 0 0;
   &:hover {
+    border-bottom: 2px solid gray;
     background-color: rgba(128, 128, 128, 0.123);
   }
 }
 .selected {
-  border: 2px solid gray;
-  border-bottom: 2px solid transparent;
-
+  // border: 2px solid gray;
+  border-bottom: 2px solid gray;
 }
