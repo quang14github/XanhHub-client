@@ -32,7 +32,6 @@ export default function SidePanel() {
                 url.push(`/user/${e.id}`);
                 setActive(e.id);
               }}
-              onMouseOver={() => setActive()}
             >
               {e.name}
             </p>
