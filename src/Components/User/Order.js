@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Order.module.scss";
-import { useHistory } from "react-router-dom";
+import { useHistory,useLocation } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import Processing from "./Order/Processing";
 import Completed from "./Order/Completed";
@@ -12,19 +12,22 @@ const tabs = [
 ];
 export default function Order() {
   const url = useHistory();
-  const [current, SetCurrent] = React.useState(0);
+  const params=useLocation();
+  const [now,setNow]=React.useState('')
+  React.useEffect(()=>{
+    setNow(params.pathname.split('/')[3]);
+  },[params])
   return (
     <div className={styles.container}>
       <div className={styles.tabsContainer}>
         {tabs.map((e, i) => (
           <div
             onClick={() => {
-              SetCurrent(i);
               url.push(`/user/order/${e.id}`);
             }}
             key={e.id}
             className={`${styles.tabItem} ${
-              i === current ? styles.selected : ""
+              now===e.id ? styles.selected : ""
             }`}
           >
             {e.name}
@@ -36,7 +39,7 @@ export default function Order() {
       <Processing />
 
         </Route>
-        <Route exact path="/user/order/complete">
+        <Route exact path="/user/order/completed">
       <Completed />
 
         </Route>
