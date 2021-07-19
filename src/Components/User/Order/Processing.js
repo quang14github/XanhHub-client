@@ -28,10 +28,12 @@ export default function Processing() {
       {order.map((e) => (
         <div className={styles.order}>
           <div className={styles.bar}>
-            <div>
-              <p className={styles.shop}>{e.shop}</p>
-              <button className={styles.chat}>Chat</button>
-              <button className={styles.viewShop}>View Shop</button>
+            <div className={styles.shop}>
+              <p>{e.shop}</p>
+              <div className={styles.barButtonGroup}>
+                <button className={styles.chat}>Chat</button>
+                <button className={styles.viewShop}>View Shop</button>
+              </div>
             </div>
             <div className={styles.status}>{e.status}</div>
           </div>
@@ -42,15 +44,15 @@ export default function Processing() {
             <div className={styles.info}>
               <div className={styles.nameAndNum}>
                 <p className={styles.name}>{e.name}</p>
-                <p className={styles.num}>{e.num}</p>
+                <p className={styles.num}>X{e.num}</p>
               </div>
               <p className={styles.price}>{e.price}</p>
             </div>
           </div>
           <div>
             <p className={styles.total}>
-              <span>Total cost:</span>
-              {e.total}
+              Total cost:
+              <span>{e.total}</span>
             </p>
             <div className={styles.buttonGroup}>
               <button className={styles.mainButton}>{e.button}</button>

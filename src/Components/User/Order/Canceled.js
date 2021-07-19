@@ -28,8 +28,8 @@ export default function Canceled() {
       {order.map((e) => (
         <div className={styles.order}>
           <div className={styles.bar}>
-            <div>
-              <p className={styles.shop}>{e.shop}</p>
+            <div className={styles.shop}>
+              <p>{e.shop}</p>
               <button className={styles.chat}>Chat</button>
               <button className={styles.viewShop}>View Shop</button>
             </div>
@@ -42,15 +42,15 @@ export default function Canceled() {
             <div className={styles.info}>
               <div className={styles.nameAndNum}>
                 <p className={styles.name}>{e.name}</p>
-                <p className={styles.num}>{e.num}</p>
+                <p className={styles.num}>X{e.num}</p>
               </div>
               <p className={styles.price}>{e.price}</p>
             </div>
           </div>
           <div>
             <p className={styles.total}>
-              <span>Total cost:</span>
-              {e.total}
+              Total cost:
+              <span>{e.total}</span>
             </p>
             <div className={styles.buttonGroup}>
               <button className={styles.mainButton}>{e.button}</button>
