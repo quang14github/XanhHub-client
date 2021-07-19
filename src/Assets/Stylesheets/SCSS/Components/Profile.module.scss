@@ -2,10 +2,6 @@
   height: 100%;
   box-sizing: border-box;
   padding: 0 10px;
-  h2 {
-    display: block;
-    text-align: center;
-  }
   form {
     font-size: 20px;
     @media screen and (max-width: 1000px) {
@@ -26,22 +22,21 @@
         padding: 1em 0;
         min-width: 5.5em;
         font-weight: bold;
+        @media screen and (max-width: 500px) {
+          padding: 5px 0;
+        }
       }
     }
   }
 }
 .btnContainer {
-  padding-top: 10px;
   font-size: 20px;
-  margin: 0 1.5em;
-  display: flex;
-  justify-content: flex-end;
   button {
-    width: 5em;
-    padding: 4px 0;
-    font-size: 1em;
-    margin-left: 10px;
+    width: 6em;
+    padding: 10px;
+    font-size: 0.8em;
     border-radius: 5px;
+    border: none;
   }
   @media screen and (max-width: 1000px) {
     font-size: 15px;
@@ -49,8 +44,14 @@
       font-size: 1.2em;
     }
   }
+  .editBtnActive {
+    color: var(--text-button-primary);
+    background-color: var(--button-primary);
+    margin-left: 10px;
+    width: 10em;
+  }
 }
-.editBtnActive {
+.editBtn {
   color: var(--text-button-primary);
   background-color: var(--button-primary);
 }
@@ -63,15 +64,10 @@
   grid-template-columns: max-content 1fr;
   grid-template-rows: 1fr;
   padding: 5px;
-  @media screen and (max-width: 500px) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
-  }
   input {
     margin-left: 30px;
     font-size: 1em;
     width: 95%;
-    border: 1px solid #bdbdbc;
     border-radius: 5px;
     background-color: rgba(235, 235, 235, 0.555);
 
@@ -81,7 +77,15 @@
       background-color: rgba(235, 235, 235, 0.062);
       color: rgb(88, 88, 88);
     }
-    @media screen and (max-width: 500px) {
+    // @media screen and (max-width: 500px) {
+    //   margin-left: 0;
+    //   width: 100%;
+    // }
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    input {
       margin-left: 0;
       width: 100%;
     }

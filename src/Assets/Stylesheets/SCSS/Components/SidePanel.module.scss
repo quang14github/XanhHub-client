@@ -4,8 +4,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
+  padding-right: 20px;
 }
-.userInfor {
+.userInfo {
   p {
     text-align: center;
   }
@@ -21,21 +22,44 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
   }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    padding-top: 15px;
+  }
 }
 .tabItem {
   text-align: center;
 }
-.mainTabs {
+.mainTab {
   border-radius: 4px;
   padding: 15px 0;
-
-  border: 1px solid gray;
-}
-.subsContainer {
-  padding: 15px;
-  padding-bottom: 0;
-  p {
-    padding: 10px 20px;
-    padding-right: 0;
+  position: relative;
+  cursor: pointer;
+  &::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
   }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: var(--button-secondary);
+    z-index: -1;
+    transition: transform 0.3s ease;
+  }
+}
+.mainTabActive {
+  background-color: var(--button-secondary);
 }

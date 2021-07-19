@@ -1,0 +1,131 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr;
+}
+.tabsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.tabItem {
+  text-align: center;
+  cursor: pointer;
+  padding: 15px;
+  transition: all 0.1s;
+  border-radius: 7px 7px 0 0;
+  &:hover {
+    border-bottom: 2px solid gray;
+    background-color: rgba(128, 128, 128, 0.123);
+  }
+  @media screen and (max-width: 500px) {
+    padding: 15px 5px;
+  }
+}
+.selected {
+  // border: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+
+// order
+.content {
+  padding: 10px 0;
+  .order {
+    // background-color: gray;
+    padding: 10px 30px;
+    .bar {
+      display: grid;
+      grid-template-columns: 80% 1fr;
+      padding: 10px 0;
+      border-bottom: 1px solid gray;
+      .shop {
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        p {
+          font-weight: bold;
+          padding-right: 10px;
+          @media screen and (max-width: 600px) {
+            flex-basis: 100%;
+          }
+        }
+        button {
+          font-size: 14px;
+          padding: 3px 10px;
+        }
+        .chat {
+          margin-right: 5px;
+        }
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      @media screen and (max-width: 400px) {
+        grid-template-columns: 1fr;
+        .status {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      padding: 10px 10px;
+    }
+  }
+}
+.product {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    .price {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-weight: bold;
+    }
+    .num {
+      font-weight: bold;
+    }
+    @media screen and (max-width: 500px) {
+      grid-template-columns: 1fr;
+      .price {
+        display: block;
+        text-align: end;
+      }
+      font-size: 15px;
+    }
+  }
+}
+.total {
+  text-align: end;
+  padding: 15px 0 5px;
+  span {
+    font-size: 24px;
+    padding-left: 5px;
+  }
+}
+.buttonGroup {
+  text-align: end;
+  button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  .mainButton {
+    margin-right: 5px;
+    color: var(--text-button-primary);
+    background-color: var(--button-primary);
+    border-color: var(--button-primary);
+    border-radius: 3px;
+  }
+}

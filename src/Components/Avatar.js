@@ -4,7 +4,7 @@ export default function Avatar({ image, alt }) {
   return (
     <div className={styles.container}>
       <img src={image} alt={alt} />
-      <p>User name</p>
+      <p>NguyenVanA</p>
     </div>
   );
 }
