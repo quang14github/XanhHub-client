@@ -8,19 +8,20 @@ export default function UserStatus() {
   React.useEffect(() => {});
   return (
     <div className={styles.container}>
-      <div
-        onMouseEnter={() => {
-          setShowCart(true);
-        }}
-        onMouseLeave={() => {
-          setShowCart(false);
-        }}
-        className={styles.group}
-      >
-        <img src={icon} alt="cart" width="30" />
-        {showCart && <CartPreview />}
-      </div>
-
+      <Link to="/cart">
+        <div
+          onMouseEnter={() => {
+            setShowCart(true);
+          }}
+          onMouseLeave={() => {
+            setShowCart(false);
+          }}
+          className={styles.group}
+        >
+          <img src={icon} alt="cart" width="30" />
+          {showCart && <CartPreview />}
+        </div>
+      </Link>
       <div className={styles.group}>
         <Link to="/user/order/processing">
           <img src={userIcon} width="30" alt="user" />
