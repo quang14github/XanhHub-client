@@ -1,0 +1,95 @@
+.footer {
+  // background-color: #231e18;
+  background-color: #231e18d2;
+  font-size: 15px;
+  color: var(--primary-text);
+  @media screen and (max-width: 500px) {
+    font-size: 13px;
+  }
+}
+.info {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0 20px;
+  h3 {
+    color: var(--button-primary);
+    padding-bottom: 10px;
+  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content 1fr;
+  }
+}
+.team {
+  padding: 0 10px;
+  .member {
+    line-height: 25px;
+  }
+}
+.contact {
+  padding: 0 10px;
+  .address {
+    line-height: 25px;
+  }
+  .phone,
+  .mail {
+    display: flex;
+    line-height: 25px;
+    align-items: center;
+    .phoneIcon,
+    .mailIcon {
+      display: flex;
+      align-items: center;
+      height: 15px;
+      width: 15px;
+      img {
+        width: 100%;
+      }
+      @media screen and (max-width: 500px) {
+        height: 12px;
+        width: 12px;
+      }
+    }
+    p {
+      padding-left: 10px;
+    }
+  }
+}
+.about {
+  padding: 0 10px;
+  ul {
+    list-style: none;
+  }
+}
+.follow {
+  padding: 0 10px;
+  a {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+  }
+  .icon {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 100%;
+      width: auto;
+    }
+    @media screen and (max-width: 500px) {
+      height: 12px;
+      width: 12px;
+    }
+  }
+  .title {
+    padding-left: 10px;
+  }
+}
+.copyRight {
+  padding-bottom: 20px;
+  text-align: center;
+}

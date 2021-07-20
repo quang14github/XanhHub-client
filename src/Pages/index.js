@@ -2,19 +2,21 @@ import HomePage from "./HomePage";
 import UserPage from "./UserPage";
 import ProductPage from "./ProductPage";
 import SearchPage from "./SearchPage";
-const routes=[
-    {link:'/',Component:HomePage,isExact:true},
-    {link:'/search',Component:SearchPage,isExact:true},
-    {link:'/user/:tab/:subtab',Component:UserPage,isExact:true},
-    {link:'/shop/:shopid',Component:HomePage,isExact:true},
-    {link:'/product/:productid',Component:ProductPage,isExact:true}
-]
-const links=[
-    {name:'Home',path:'/'},
-    {name:'Discovery',path:'/search'},
-    {name:'Blog',path:'/'},
-    // {name:'Cart',path:'/'},
-    // {name:'User',path:'/user'},
-  ]
-export {links}
-export default routes
+import CartPage from "./CartPage";
+const routes = [
+  { link: "/", Component: HomePage, isExact: true },
+  { link: "/search", Component: SearchPage, isExact: true },
+  { link: "/user/:tab", Component: UserPage, isExact: false },
+  { link: "/shop/:shopid", Component: HomePage, isExact: true },
+  { link: "/product/:productid", Component: ProductPage, isExact: true },
+  { link: "/cart", Component: CartPage, isExact: true },
+];
+const links = [
+  { name: "Home", path: "/" },
+  { name: "Discovery", path: "/search" },
+  { name: "Blog", path: "/" },
+  // { name: "Cart", path: "/cart" },
+  // {name:'User',path:'/user'},
+];
+export { links };
+export default routes;
