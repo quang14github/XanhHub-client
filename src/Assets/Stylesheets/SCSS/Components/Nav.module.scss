@@ -67,11 +67,14 @@ $medium-nav: var(--medium-nav);
     margin: 0;
   }
 }
+.logo{
+  width:100px;
+}
 .logoContainer {
   display: flex;
   z-index: 20;
   align-items: center;
-
+  
   @media screen and (max-width: 950px) {
     justify-content: center;
   }

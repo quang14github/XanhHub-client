@@ -1,16 +1,15 @@
 import { React, useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/SidePanel.module.scss";
 import Avatar from "Components/Avatar";
-import logo from "Assets/Images/XanhHub.png";
 import { useHistory } from "react-router-dom";
 const tabs = [
-  { name: "Account details", id: "account" },
-  { name: "Orders", id: "order" },
+  { name: "Account details", id: "account/me" },
+  { name: "Orders", id: "order/processing" },
   { name: "Logout", id: "logout" },
 ];
 export default function SidePanel() {
   const url = useHistory();
-  const [Active, setActive] = useState();
+  const [Active, setActive] = useState(null);
   return (
     <div className={styles.container}>
       <div className={styles.userInfo}>
