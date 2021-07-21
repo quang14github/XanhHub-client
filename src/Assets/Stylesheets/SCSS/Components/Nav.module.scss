@@ -92,3 +92,12 @@ $medium-nav: var(--medium-nav);
     border-radius: 4px;
   }
 }
+.loginButton{
+  background-color: var( --button-primary);
+  padding:20px;
+  border-radius: 4px;
+  color:black;
+  font-weight: bold;
+  margin-left: 5px;
+  transform: translateY(-3px);
+}

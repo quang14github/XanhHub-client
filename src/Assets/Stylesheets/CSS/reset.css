@@ -12,7 +12,11 @@ input:focus,input{
   outline: none;
   border:none;
 }
-
+button{
+  border:none;
+  cursor: pointer;
+  background-color: transparent;
+}
 
 p,
 h1,

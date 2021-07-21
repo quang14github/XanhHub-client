@@ -5,7 +5,8 @@ import menu from 'Assets/Images/menu.svg'
 import UserStatus from "Components/UserStatus";
 import { Link } from "react-router-dom";
 import {links} from 'Pages'
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
+import TYPE from 'Store/CONSTANT'
 export default function Nav() {
   const [isShown,setShown]=React.useState(false)
   const isLoggedIn=useSelector(state=>state.user.logInStatus)
@@ -27,10 +28,21 @@ export default function Nav() {
 
         ))}
        
-          {isLoggedIn&&<UserStatus/>}
+          {isLoggedIn?<UserStatus/>:<LoginButton/>}
+          
        
         </div>
     </div>
 
   </div>;
+}
+
+const LoginButton=()=>{
+  const dispatch = useDispatch()
+  const clickHandler=()=>{
+    dispatch({type:TYPE.tryLoginUser})
+  }
+  return <button onClick={clickHandler} className={styles.loginButton}>
+    LOGIN
+  </button>
 }

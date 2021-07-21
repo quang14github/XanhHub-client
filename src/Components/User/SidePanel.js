@@ -2,6 +2,8 @@ import { React, useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/SidePanel.module.scss";
 import Avatar from "Components/Avatar";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import TYPE from "Store/CONSTANT";
 const tabs = [
   { name: "Account details", id: "account/me" },
   { name: "Orders", id: "order/processing" },
@@ -9,6 +11,7 @@ const tabs = [
 ];
 export default function SidePanel() {
   const url = useHistory();
+  const dispatch = useDispatch();
   const [Active, setActive] = useState(null);
   return (
     <div className={styles.container}>
@@ -28,6 +31,11 @@ export default function SidePanel() {
                   : styles.mainTab
               }
               onClick={() => {
+                if (e.id === "logout") {
+                  dispatch({ type: TYPE.logOutUser });
+                  return;
+                }
+
                 url.push(`/user/${e.id}`);
                 setActive(e.id);
               }}

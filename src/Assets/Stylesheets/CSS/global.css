@@ -34,7 +34,11 @@ body{
 .button {
   border: none;
   border-radius: 4px;
-  background-color: var(--button-primary);
+  /* background-color: var(--button-primary); */
+}
+.bg-second{
+  background-color: var(--secondary-background-trans) !important;
+  color:white !important;
 }
 ::-moz-selection {
   /* Code for Firefox */

@@ -1,0 +1,52 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  padding: 0 10%;
+  justify-content: flex-end;
+  @media screen and (max-width: 950px) {
+    justify-content: center;
+  }
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100vw;
+  input,
+  button {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  input {
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.096);
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  button {
+    padding: 20px 0;
+    cursor: pointer;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.24);
+  }
+}
+.closeLogin {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: all 0.4s;
+
+  color: gray;
+  background-color: rgba(128, 128, 128, 0.281);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.473);
+  }
+}
