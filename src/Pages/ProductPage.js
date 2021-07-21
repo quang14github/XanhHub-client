@@ -6,17 +6,17 @@ import ListInfo from "Components/Product/ListInfo";
 import AboutCompany from "Components/Product/AboutCompany";
 import Review from "Components/Product/Review";
 import styles from "Assets/Stylesheets/SCSS/Pages/ProductPage.module.scss";
-export default function ProductPage() {
+export default function ProductPage(props) {
   return (
     <Layout>
       <div className={styles.product}>
         <div className={styles.main}>
-          <Information />
+          <Information productid={props.match.params.productid} />
           <RelatedProduct />
         </div>
       </div>
-      <ListInfo />
-      <AboutCompany />
+      <ListInfo productid={props.match.params.productid} />
+      <AboutCompany productid={props.match.params.productid} />
       <Review />
     </Layout>
   );
