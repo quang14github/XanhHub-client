@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import TYPE from "Store/CONSTANT";
 import { loginUser } from "API";
 
-export default function LoginPage() {
+export default function LoginPage({canClose}) {
   const [isLogin, setMode] = React.useState(true);
   const [user, setUser] = React.useState({
     username: "",
@@ -40,9 +40,10 @@ export default function LoginPage() {
   };
   return (
     <div onSubmit={onSubmit} className={styles.container}>
-      <button onClick={onClose} className={styles.closeLogin}>
-        X
-      </button>
+     
+     
+
+
       <form className={styles.formContainer}>
         <input
           type="text"
@@ -84,6 +85,9 @@ export default function LoginPage() {
           {isLogin ? "Don't have account?" : "Already Signed up?"}
         </button>
       </form>
+        {canClose&&<button onClick={onClose}>
+        close
+      </button>}
     </div>
   );
 }

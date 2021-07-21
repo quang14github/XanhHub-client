@@ -4,16 +4,20 @@ import styles from "Assets/Stylesheets/SCSS/Components/Layout.module.scss";
 import Footer from "./Footer";
 import { useSelector } from "react-redux";
 import LoginPage from "Pages/LoginPage";
-export default function Layout({ children }) {
+export default function Layout({ children ,requiredLogin=false}) {
   const userTryLogin=useSelector(state=>state.user.tryLogin)
-  if(userTryLogin===false){
+  const loginStatus=useSelector(state=>state.user.logInStatus)
+
     return (
       <div className={styles.container}>
         <Nav />
-        <div>{children}</div>
+        <div className={styles.mainContent}>
+          
+          {userTryLogin || (!loginStatus && requiredLogin) ?<LoginPage canClose={!requiredLogin}/>:children}
+        
         <Footer />
+        </div>
       </div>
     );
-  }
-  return <LoginPage/>
+  
 }

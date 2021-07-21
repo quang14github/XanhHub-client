@@ -32,9 +32,7 @@ export default function HomePage() {
           <button className={`button ${styles.buttonLogin}`}>Try IT</button>
       </div>
 
-      <footer className={styles.homeFooter}>
-        <h1>2021 - xanhhub</h1>
-      </footer>
+      
     </Layout>
   );
 }

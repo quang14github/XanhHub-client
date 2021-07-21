@@ -38,11 +38,10 @@ export default function Nav() {
 }
 
 const LoginButton=()=>{
-  const dispatch = useDispatch()
-  const clickHandler=()=>{
-    dispatch({type:TYPE.tryLoginUser})
-  }
-  return <button onClick={clickHandler} className={styles.loginButton}>
+  
+  return <Link to="/user/order/processing">
+  <button  className={styles.loginButton}>
     LOGIN
   </button>
+  </Link>
 }
