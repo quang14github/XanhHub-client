@@ -180,6 +180,6 @@ const companys = [
     id: 29,
   },
 ];
-export default function UseCompany(id) {
-  return companys[id];
+export default function useCompany() {
+  return companys;
 }

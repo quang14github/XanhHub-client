@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/ListInfo.module.scss";
 const features = [
   {
@@ -60,7 +60,7 @@ const specs = [
     ],
   },
 ];
-export default function ListInfo() {
+export default function ListInfo(props) {
   return (
     <>
       <section className={styles.section} id="feature">

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Information.module.scss";
 import ReactStars from "react-rating-stars-component";
-import UseCompany from "Components/UseCompany";
+import useCompany from "Components/useCompany";
 const iconURL = [
   "https://d13wriz42ny3t5.cloudfront.net/production/2017/06/23231934/icons_b-corp.png",
   "https://d13wriz42ny3t5.cloudfront.net/production/2017/06/23231926/icons_sustainable-lifestyle.png",
@@ -17,35 +17,18 @@ const priceValue =
   `${Math.floor(Math.random() * 90) + 10}`;
 export default function Information(props) {
   const [NumItem, setNumItem] = useState("1");
-  const [Company, setCompany] = useState();
-  const [ProductName, setProductName] = useState();
-  const [ProductImage, setProductImage] = useState();
-  const [ProductDescription, setProductDescription] = useState();
-  const productid = props.productid;
-  console.log(productid);
-  useEffect(() => {
-    requestProduct();
-  }, []);
-  async function requestProduct() {
-    const res = await fetch(
-      `http://207.46.145.28/v1/product/byid?id=${productid}`
-    );
-    const json = await res.json();
-    console.log(res);
-    setCompany("A");
-    setProductName(json.NAME);
-    setProductImage(json.img);
-    setProductDescription(json.des);
-  }
+  const companys = useCompany();
   return (
     <div className={styles.main}>
       <div className={styles.image}>
-        <img src={ProductImage} alt="product" />
+        <img src={props.product.img} alt="product" />
       </div>
 
       <div className={styles.information}>
-        <p className={styles.company}>{Company}</p>
-        <h2 className={styles.name}>{ProductName}</h2>
+        <p className={styles.company}>
+          {companys[parseInt(props.product.company)].name}
+        </p>
+        <h2 className={styles.name}>{props.product.NAME}</h2>
         <div className={styles.starRating}>
           <ReactStars
             value={reactStarsValue}
@@ -84,7 +67,7 @@ export default function Information(props) {
             </div>
           ))}
         </div>
-        <p className={styles.description}>{ProductDescription}</p>
+        <p className={styles.description}>{props.product.des}</p>
         <div className={styles.jump}>
           <p className={styles.goTo}>GO TO:</p>
           <a href="#feature">Sustainability Features</a>
