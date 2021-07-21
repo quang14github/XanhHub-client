@@ -22,16 +22,20 @@ export default function ProductPage(props) {
   }
   return (
     <Layout>
-      <div className={styles.product}>
-        <div className={styles.main}>
-          <Information product={Product} />
-          {console.log(Product)}
-          <RelatedProduct />
-        </div>
-      </div>
-      <ListInfo product={Product} />
-      <AboutCompany product={Product} />
-      <Review />
+  {Product? <>
+  <div className={styles.product}>
+    <div className={styles.main}>
+      <Information product={Product} />
+      {console.log(Product)}
+      <RelatedProduct />
+    </div>
+  </div>
+  <ListInfo product={Product} />
+  <AboutCompany product={Product} />
+  <Review />
+  </>:<div style={{height:'100%'}}></div>
+  }
     </Layout>
   );
 }
+
