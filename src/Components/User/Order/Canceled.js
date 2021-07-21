@@ -7,7 +7,7 @@ const order = [
     image: "https://cf.shopee.vn/file/e44b73b6a3528b90bb3a2203cd056cea",
     name: "[Mã FMCGMALL giảm 8% đơn 250K] Tã quần Moony Natural siêu cao cấp M46/L36/Xl32",
     price: "$299.000",
-    num: "1",
+    quantity: "1",
     total: "$343.000",
     button: "BUY AGAIN",
   },
@@ -17,7 +17,7 @@ const order = [
     image: "https://cf.shopee.vn/file/e44b73b6a3528b90bb3a2203cd056cea",
     name: "[Mã FMCGMALL giảm 8% đơn 250K] Tã quần Moony Natural siêu cao cấp M46/L36/Xl32",
     price: "$299.000",
-    num: "1",
+    quantity: "1",
     total: "$343.000",
     button: "BUY AGAIN",
   },
@@ -40,9 +40,9 @@ export default function Canceled() {
               <img src={e.image} alt="product" />
             </div>
             <div className={styles.info}>
-              <div className={styles.nameAndNum}>
+              <div className={styles.nameAndQuantity}>
                 <p className={styles.name}>{e.name}</p>
-                <p className={styles.num}>X{e.num}</p>
+                <p className={styles.quantity}>X{e.quantity}</p>
               </div>
               <p className={styles.price}>{e.price}</p>
             </div>

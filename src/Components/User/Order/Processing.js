@@ -7,7 +7,7 @@ const order = [
     image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
     name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
     price: "$58.000",
-    num: "1",
+    quantity: "1",
     total: "$55.000",
     button: "RECEIVED",
   },
@@ -17,7 +17,7 @@ const order = [
     image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
     name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
     price: "$58.000",
-    num: "1",
+    quantity: "1",
     total: "$55.000",
     button: "RECEIVED",
   },
@@ -42,9 +42,9 @@ export default function Processing() {
               <img src={e.image} alt="product" />
             </div>
             <div className={styles.info}>
-              <div className={styles.nameAndNum}>
+              <div className={styles.nameAndQuantity}>
                 <p className={styles.name}>{e.name}</p>
-                <p className={styles.num}>X{e.num}</p>
+                <p className={styles.quantity}>X{e.quantity}</p>
               </div>
               <p className={styles.price}>{e.price}</p>
             </div>

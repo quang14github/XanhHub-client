@@ -7,7 +7,7 @@ const order = [
     image: "https://cf.shopee.vn/file/d90c7a2604ed3e5908a81639a6c6d543",
     name: "[Mã FMCGMALL giảm 8% đơn 250K] Sữa rửa mặt làm sạch innisfree Green Tea Foam Cleanser 150ml",
     price: "$220.000",
-    num: "2",
+    quantity: "2",
     total: "$460.000",
     button: "BUY AGAIN",
   },
@@ -17,7 +17,7 @@ const order = [
     image: "https://cf.shopee.vn/file/d90c7a2604ed3e5908a81639a6c6d543",
     name: "[Mã FMCGMALL giảm 8% đơn 250K] Sữa rửa mặt làm sạch innisfree Green Tea Foam Cleanser 150ml",
     price: "$220.000",
-    num: "2",
+    quantity: "2",
     total: "$460.000",
     button: "BUY AGAIN",
   },
@@ -40,9 +40,9 @@ export default function Completed() {
               <img src={e.image} alt="product" />
             </div>
             <div className={styles.info}>
-              <div className={styles.nameAndNum}>
+              <div className={styles.nameAndQuantity}>
                 <p className={styles.name}>{e.name}</p>
-                <p className={styles.num}>X{e.num}</p>
+                <p className={styles.quantity}>X{e.quantity}</p>
               </div>
               <p className={styles.price}>{e.price}</p>
             </div>
