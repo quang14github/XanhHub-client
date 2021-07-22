@@ -42,7 +42,9 @@ export default function LoginPage({canClose}) {
     <div onSubmit={onSubmit} className={styles.container}>
      
      
-
+     {canClose&&<button className={styles.closeButton} onClick={onClose}>
+        X
+      </button>}
 
       <form className={styles.formContainer}>
         <input
@@ -85,9 +87,7 @@ export default function LoginPage({canClose}) {
           {isLogin ? "Don't have account?" : "Already Signed up?"}
         </button>
       </form>
-        {canClose&&<button onClick={onClose}>
-        close
-      </button>}
+       
     </div>
   );
 }
