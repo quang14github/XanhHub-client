@@ -2,6 +2,9 @@ import { React, useState, useEffect } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Information.module.scss";
 import ReactStars from "react-rating-stars-component";
 import useCompany from "Components/useCompany";
+const Entities = require("html-entities").AllHtmlEntities;
+
+const entities = new Entities();
 const iconURL = [
   "https://d13wriz42ny3t5.cloudfront.net/production/2017/06/23231934/icons_b-corp.png",
   "https://d13wriz42ny3t5.cloudfront.net/production/2017/06/23231926/icons_sustainable-lifestyle.png",
@@ -16,6 +19,7 @@ const priceValue =
   "." +
   `${Math.floor(Math.random() * 90) + 10}`;
 export default function Information(props) {
+  console.log(props);
   const [NumItem, setNumItem] = useState("1");
   const companys = useCompany();
   return (
@@ -26,9 +30,9 @@ export default function Information(props) {
 
       <div className={styles.information}>
         <p className={styles.company}>
-          {companys[parseInt(props.product.company)].name}
+          {entities.decode(companys[props.product.company].name)}
         </p>
-        <h2 className={styles.name}>{props.product.NAME}</h2>
+        <h2 className={styles.name}>{entities.decode(props.product.NAME)}</h2>
         <div className={styles.starRating}>
           <ReactStars
             value={reactStarsValue}
@@ -67,7 +71,9 @@ export default function Information(props) {
             </div>
           ))}
         </div>
-        <p className={styles.description}>{props.product.des}</p>
+        <p className={styles.description}>
+          {entities.decode(props.product.des.replace(/\\r\\n/g, ""))}
+        </p>
         <div className={styles.jump}>
           <p className={styles.goTo}>GO TO:</p>
           <a href="#feature">Sustainability Features</a>

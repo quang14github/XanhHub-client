@@ -1,6 +1,5 @@
-
 .bar {
-  background-image: url("https://earthhero.com/wp-content/themes/earthhero/images/sustainability-bar-bg.jpg");
+  background-image: url("../../../Images/sustainability-bar-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 15px 0;
@@ -18,19 +17,13 @@
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content;
   padding-bottom: 40px;
 }
 .image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("https://d13wriz42ny3t5.cloudfront.net/production/2017/08/23230657/love-bottle-who-they-are.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  img {
-    width: 70%;
-  }
 }
 .content {
   background-color: #f3f2f1;

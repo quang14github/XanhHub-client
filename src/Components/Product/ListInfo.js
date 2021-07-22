@@ -1,66 +1,49 @@
 import { React, useEffect, useState } from "react";
+import feature_origin_icon from "Assets/Images/Icon/feature_origin.png";
+import feature_material_icon from "Assets/Images/Icon/feature_material.png";
+import feature_end_of_life_icon from "Assets/Images/Icon/feature_end-of-life.png";
+import spec_product_care from "Assets/Images/Icon/spec_product-care.png";
+import spec_additional_features from "Assets/Images/Icon/spec_additional-features.png";
+import spec_returns from "Assets/Images/Icon/spec_returns.png";
 import styles from "Assets/Stylesheets/SCSS/Components/ListInfo.module.scss";
-const features = [
-  {
-    icon: "https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/origin.png",
-    title: "ORIGIN",
-    list: ["Made in Viet Nam"],
-  },
-  {
-    icon: "https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/3.png",
-    title: "EARTH FRIENDLY FEATURES",
-    list: [
-      "Love Bottle donates 5% of every purchase to Global Water, which helps bring safe drinking water to those who need it",
-    ],
-  },
-  {
-    icon: "https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/origin.png",
-    title: "ORIGIN",
-    list: ["Made in Viet Nam"],
-  },
-  {
-    icon: "https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/origin.png",
-    title: "ORIGIN",
-    list: ["Made in Viet Nam"],
-  },
-];
-const specs = [
-  {
-    icon: "	https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/5.png",
-    title: "PRODUCT CARE",
-    list: [
-      "Do not freeze",
-      "Do not fill with hot liquid",
-      "May break when dropped",
-    ],
-  },
-  {
-    icon: "	https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/5.png",
-    title: "PRODUCT CARE",
-    list: [
-      "Do not freeze",
-      "Do not fill with hot liquid",
-      "May break when dropped",
-    ],
-  },
-  {
-    icon: "	https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/5.png",
-    title: "PRODUCT CARE",
-    list: [
-      "Do not freeze",
-      "Do not fill with hot liquid",
-      "May break when dropped",
-    ],
-  },
-  {
-    icon: "	https://earthhero.com/wp-content/themes/earthhero/images/feature-icons/5.png",
-    title: "PRODUCT CARE",
-    list: [
-      "Unused, undamaged items in their original packaging can be returned within 30 days",
-    ],
-  },
-];
+const Entities = require("html-entities").AllHtmlEntities;
+
+const entities = new Entities();
 export default function ListInfo(props) {
+  const features = [
+    {
+      icon: feature_origin_icon,
+      title: "ORIGIN",
+      list: props.product.feature__ORIGIN,
+    },
+    {
+      icon: feature_material_icon,
+      title: "MATERIALS",
+      list: props.product.feature__MATERIALS,
+    },
+    {
+      icon: feature_end_of_life_icon,
+      title: "END OF LIFE",
+      list: props.product.feature__END_OF_LIFE,
+    },
+  ];
+  const specs = [
+    {
+      icon: spec_product_care,
+      title: "PRODUCT CARE",
+      list: props.product.specifications__PRODUCT_CARE,
+    },
+    {
+      icon: spec_additional_features,
+      title: "ADDITIONAL FEATURES",
+      list: props.product.specifications__ADDITIONAL_FEATURES,
+    },
+    {
+      icon: spec_returns,
+      title: "RETURNS",
+      list: props.product.specifications__RETURNS,
+    },
+  ];
   return (
     <>
       <section className={styles.section} id="feature">
@@ -74,9 +57,7 @@ export default function ListInfo(props) {
               <div className={styles.text}>
                 <header>{obj.title}</header>
                 <ul>
-                  {obj.list.map((content) => (
-                    <li>{content}</li>
-                  ))}
+                  <li>{entities.decode(obj.list)}</li>
                 </ul>
               </div>
             </div>
@@ -94,9 +75,7 @@ export default function ListInfo(props) {
               <div className={styles.text}>
                 <header>{obj.title}</header>
                 <ul>
-                  {obj.list.map((content) => (
-                    <li>{content}</li>
-                  ))}
+                  <li>{entities.decode(obj.list)}</li>
                 </ul>
               </div>
             </div>

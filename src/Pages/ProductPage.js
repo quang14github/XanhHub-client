@@ -9,7 +9,7 @@ import styles from "Assets/Stylesheets/SCSS/Pages/ProductPage.module.scss";
 import { useState } from "react";
 export default function ProductPage(props) {
   const productid = props.match.params.productid;
-  const [Product, setProduct] = useState();
+  const [thisProduct, setThisProduct] = useState();
   useEffect(() => {
     requestProduct();
   }, [props]);
@@ -18,24 +18,25 @@ export default function ProductPage(props) {
       `http://207.46.145.28/v1/product/byid?id=${productid}`
     );
     const json = await res.json();
-    setProduct(json);
+    setThisProduct(json);
   }
   return (
     <Layout>
-  {Product? <>
-  <div className={styles.product}>
-    <div className={styles.main}>
-      <Information product={Product} />
-      {console.log(Product)}
-      <RelatedProduct />
-    </div>
-  </div>
-  <ListInfo product={Product} />
-  <AboutCompany product={Product} />
-  <Review />
-  </>:<div style={{height:'100%'}}></div>
-  }
+      {thisProduct && !thisProduct.err ? (
+        <>
+          <div className={styles.product}>
+            <div className={styles.main}>
+              <Information product={thisProduct} />
+              <RelatedProduct />
+            </div>
+          </div>
+          <ListInfo product={thisProduct} />
+          <AboutCompany product={thisProduct} />
+          <Review product={thisProduct} />
+        </>
+      ) : (
+        <div style={{ height: "100%" }}></div>
+      )}
     </Layout>
   );
 }
-
