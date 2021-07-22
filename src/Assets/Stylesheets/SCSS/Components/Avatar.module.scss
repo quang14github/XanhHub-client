@@ -1,16 +1,20 @@
 .container {
   overflow: hidden;
-  height: 120px;
+  height: 140px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  img {
-    height: 100%;
-    width: auto;
+  div {
+    height:80px;
+    width: 80px;
     border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+    box-shadow: rgba(100, 100, 111, 0.384) 0px 7px 29px 0px;
   }
   p {
-    padding-left: 20px;
+    padding-top: 10px;
     font-size: 20px;
     max-width: 200px;
   }

@@ -4,11 +4,11 @@
     display: grid;
     grid-template-columns: 100%;
     min-height: 100vh;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: max-content 1fr max-content;
     
 }
 .mainContent{
-    display: grid;
+   
     min-height: 100%;
-    grid-template-rows: 1fr max-content;
+   
 }

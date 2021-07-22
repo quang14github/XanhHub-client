@@ -10,16 +10,11 @@ export default function UserStatus() {
     <div className={styles.container}>
       <Link to="/cart">
         <div
-          onMouseEnter={() => {
-            setShowCart(true);
-          }}
-          onMouseLeave={() => {
-            setShowCart(false);
-          }}
+          
           className={styles.group}
         >
           <img src={icon} alt="cart" width="30" />
-          {showCart && <CartPreview />}
+          
         </div>
       </Link>
       <div className={styles.group}>
@@ -31,6 +26,3 @@ export default function UserStatus() {
   );
 }
 
-const CartPreview = () => {
-  return <div className={styles.previewContainer}>cart</div>;
-};

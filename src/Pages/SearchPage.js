@@ -6,13 +6,13 @@ import SearchFilter from 'Components/SearchFilter'
 export default function SearchPage() {
     return (
         <Layout>
-           <div>
+           {/* <div> */}
            <div className={styles.searchBox}>
                 <div className={styles.overlay}></div>
                 <div className={styles.searchPosition}><SearchBar/></div>
             </div>
             <div className={styles.filter}><SearchFilter/></div>
-           </div>
+           {/* </div> */}
 
 
         </Layout>

@@ -6,7 +6,7 @@ import Cart from "Components/Cart";
 export default function CartPage() {
   const [toCheckout, setToCheckout] = useState(false);
   return (
-    <Layout>
+    <Layout requiredLogin={true}>
       <Cart
         checkout={(state) => setToCheckout(state)}
         toCheckout={toCheckout}

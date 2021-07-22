@@ -15,8 +15,8 @@ export default function Layout({ children ,requiredLogin=false}) {
           
           {userTryLogin || (!loginStatus && requiredLogin) ?<LoginPage canClose={!requiredLogin}/>:children}
         
-        <Footer />
         </div>
+        <Footer />
       </div>
     );
   
