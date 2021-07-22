@@ -1,29 +1,33 @@
 import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Review.module.scss";
 import { useState } from "react";
-const reviews = [
-  {
-    title: "Love bottles",
-    name: "Ronaldo",
-    date: "February 26, 2021",
-    comment: "everytime I drink water my heart is filled with love",
-  },
-  {
-    title: "Love bottles",
-    name: "Ronaldo",
-    date: "February 26, 2021",
+import useCompany from "Components/useCompany";
+const Entities = require("html-entities").AllHtmlEntities;
 
-    comment: "everytime I drink water my heart is filled with love",
-  },
-  {
-    title: "Love bottles",
-    name: "Ronaldo",
-    date: "February 26, 2021",
-    comment: "everytime I drink water my heart is filled with love",
-  },
-];
-export default function Review() {
+const entities = new Entities();
+export default function Review(props) {
   const [Review, setReview] = useState(false);
+  const companys = useCompany();
+  const reviews = [
+    {
+      title: entities.decode(companys[props.product.company].name),
+      name: "Reviewer " + Math.floor(Math.random() * 101),
+      date: "July 24, 2021",
+      comment: "My heart has been filled with love",
+    },
+    {
+      title: entities.decode(props.product.NAME),
+      name: "Reviewer " + Math.floor(Math.random() * 101),
+      date: "July 24, 2021",
+      comment: "Best choice!",
+    },
+    {
+      title: props.product.CATEGORY,
+      name: "Reviewer " + Math.floor(Math.random() * 101),
+      date: "July 24, 2021",
+      comment: "I will recommend this to my friends.",
+    },
+  ];
   return (
     <section className={styles.section}>
       <div className={`${styles.bar}`}>
@@ -66,8 +70,7 @@ export default function Review() {
             {reviews.map((obj) => (
               <div className={styles.review}>
                 <p className={styles.title}>{obj.title}</p>
-                <span className={styles.name}>{obj.name}</span>
-                <span>-</span>
+                <span className={styles.name}>{obj.name + " - "}</span>
                 <span className={styles.date}>{obj.date}</span>
                 <p className={styles.comment}>{obj.comment}</p>
               </div>
