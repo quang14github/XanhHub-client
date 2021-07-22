@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Information.module.scss";
 import ReactStars from "react-rating-stars-component";
 import useCompany from "Components/useCompany";
-import {useAddToCart} from 'Hooks'
+import { useAddToCart } from "Hooks";
 const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
@@ -19,11 +19,8 @@ const priceValue =
   `${Math.floor(Math.random() * 5) + 5}` +
   "." +
   `${Math.floor(Math.random() * 90) + 10}`;
-export default function Information({product}) {
-
-
-console.log(product);
-  const onAddToCart=useAddToCart()
+export default function Information({ product }) {
+  const onAddToCart = useAddToCart();
 
   const [NumItem, setNumItem] = useState("1");
   const companys = useCompany();
@@ -55,10 +52,20 @@ console.log(product);
           <p className={styles.earnPoint}>
             EARN UP TO <span>24 XANHHUB POINTS</span> FOR THIS PURCHASE!
           </p>
-          <form onSubmit={(e)=>{
-            e.preventDefault()
-           onAddToCart({count:NumItem,id:product.SID,supCode:product.company,img:product.img,price:priceValue,name:product.NAME})
-          }} className={styles.form}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              onAddToCart({
+                count: NumItem,
+                id: product.SID,
+                supCode: product.company,
+                img: product.img,
+                price: priceValue,
+                name: product.NAME,
+              });
+            }}
+            className={styles.form}
+          >
             <input
               className={styles.num}
               type="number"
@@ -74,7 +81,7 @@ console.log(product);
         </div>
         <div className={styles.icon}>
           {iconURL.map((url, i) => (
-            <div key={'icon-'+i} className={styles.iconImage}>
+            <div key={"icon-" + i} className={styles.iconImage}>
               <img src={url} alt={`icon${i}`} />
             </div>
           ))}

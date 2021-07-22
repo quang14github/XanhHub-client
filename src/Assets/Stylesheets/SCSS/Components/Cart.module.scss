@@ -27,54 +27,38 @@
     display: none;
   }
 }
-.order {
-  border: 1px solid gray;
-  padding: 10px 25px;
-  @media screen and (max-width: 500px) {
-    padding: 10px 10px;
-  }
-}
-.shop {
-  display: flex;
-  flex-flow: wrap;
-  align-items: center;
-  padding: 10px 0;
-  p {
-    font-weight: bold;
-    padding: 0 10px 0 20px;
-  }
-  button {
-    font-size: 14px;
-    padding: 3px 10px;
-  }
-  .chat {
-    margin-right: 5px;
-  }
-}
 .product {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 15px 0 0;
+  border: 1px solid gray;
+  padding: 15px 25px 10px;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
   .info {
     display: grid;
     grid-template-columns: 20px 100px 1fr;
     grid-gap: 20px;
+    .shop_name {
+      font-weight: bold;
+    }
     .image {
       img {
         width: 100%;
+        height: auto;
       }
+    }
+    @media screen and (max-width: 400px) {
+      grid-template-columns: 20px 80px 1fr;
+      grid-gap: 5px;
     }
   }
 }
 .subInfo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
-.price {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+  grid-gap: 10px;
 }
 .selectQuantity {
   display: flex;
@@ -82,7 +66,7 @@
   justify-content: center;
   font-size: 24px;
   .quantity {
-    margin: 0 10px;
+    margin: 0 5px;
     font-size: 0.8em;
     height: fit-content;
     width: 30px;
@@ -109,19 +93,22 @@
   align-items: center;
 }
 .buttonGroup {
-  text-align: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   button {
-    font-size: 14px;
-    padding: 10px 15px;
-    @media screen and( max-width: 500px) {
-      padding: 5px 10px;
-    }
-  }
-  .mainButton {
-    margin-right: 5px;
     color: var(--text-button-primary);
     background-color: var(--button-primary);
     border-color: var(--button-primary);
     border-radius: 3px;
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+@media screen and( max-width: 600px) {
+  .selectQuantity,
+  .subTotal,
+  .buttonGroup {
+    justify-content: flex-end;
   }
 }
