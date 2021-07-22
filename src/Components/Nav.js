@@ -5,8 +5,7 @@ import menu from 'Assets/Images/menu.svg'
 import UserStatus from "Components/UserStatus";
 import { Link } from "react-router-dom";
 import {links} from 'Pages'
-import { useSelector ,useDispatch} from "react-redux";
-import TYPE from 'Store/CONSTANT'
+import { useSelector } from "react-redux";
 export default function Nav() {
   const [isShown,setShown]=React.useState(false)
   const isLoggedIn=useSelector(state=>state.user.logInStatus)
@@ -20,8 +19,8 @@ export default function Nav() {
         <div className={`${styles.linksContainer} ${isShown?styles.visible:''}`} >
 
         {links.map((e)=>(
-          <Link to={e.path}>
-        <div className={styles.linkItem} key={"item-"+e.name}>
+          <Link  key={"item-"+e.name} to={e.path}>
+        <div className={styles.linkItem} >
           <p>{e.name}</p>
         </div>
           </Link>

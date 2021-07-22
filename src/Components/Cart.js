@@ -2,23 +2,23 @@ import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Cart.module.scss";
 import { useState } from "react";
 const order = [
-  {
-    shop: "3ccases.vn",
-    product: [
-      {
-        image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
-        name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
-        price: "$58.000",
-        quantity: "1",
-      },
-      {
-        image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
-        name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
-        price: "$58.000",
-        quantity: "1",
-      },
-    ],
-  },
+  // {
+  //   shop: "3ccases.vn",
+  //   product: [
+  //     {
+  //       image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
+  //       name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
+  //       price: "$58.000",
+  //       quantity: "1",
+  //     },
+  //     {
+  //       image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
+  //       name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
+  //       price: "$58.000",
+  //       quantity: "1",
+  //     },
+  //   ],
+  // },
 ];
 export default function Cart(props) {
   const [quantity, setQuantity] = useState(

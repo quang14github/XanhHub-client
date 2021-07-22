@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/RelatedProduct.module.scss";
-import ProductInformation from "./Information";
+//import ProductInformation from "./Information";
 import ProductList from "Components/ProductList";
-const products = [
-  {
-    url: "https://d13wriz42ny3t5.cloudfront.net/production/2017/08/23230802/love-bottle-family-recycled-glass-water-bottle-300x300.jpg",
-    name: "All Clear Water Bottle",
-    price: "$24.99",
-  },
+// const products = [
+//   {
+//     url: "https://d13wriz42ny3t5.cloudfront.net/production/2017/08/23230802/love-bottle-family-recycled-glass-water-bottle-300x300.jpg",
+//     name: "All Clear Water Bottle",
+//     price: "$24.99",
+//   },
   // {
   //   url: "https://d13wriz42ny3t5.cloudfront.net/production/2017/08/23230802/love-bottle-family-recycled-glass-water-bottle-300x300.jpg",
   //   name: "Honey Water Bottle",
@@ -33,7 +33,7 @@ const products = [
   //   name: "Love Our Earth Water Bottle",
   //   price: "$24.99",
   // },
-];
+//];
 export default function RelatedProduct() {
   return (
     <div className={styles.container}>

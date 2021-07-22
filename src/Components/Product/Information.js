@@ -1,7 +1,8 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Information.module.scss";
 import ReactStars from "react-rating-stars-component";
 import useCompany from "Components/useCompany";
+import {useAddToCart} from 'Hooks'
 const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
@@ -18,21 +19,25 @@ const priceValue =
   `${Math.floor(Math.random() * 5) + 5}` +
   "." +
   `${Math.floor(Math.random() * 90) + 10}`;
-export default function Information(props) {
-  console.log(props);
+export default function Information({product}) {
+
+
+console.log(product);
+  const onAddToCart=useAddToCart()
+
   const [NumItem, setNumItem] = useState("1");
   const companys = useCompany();
   return (
     <div className={styles.main}>
       <div className={styles.image}>
-        <img src={props.product.img} alt="product" />
+        <img src={product.img} alt="product" />
       </div>
 
       <div className={styles.information}>
         <p className={styles.company}>
-          {entities.decode(companys[props.product.company].name)}
+          {entities.decode(companys[product.company].name)}
         </p>
-        <h2 className={styles.name}>{entities.decode(props.product.NAME)}</h2>
+        <h2 className={styles.name}>{entities.decode(product.NAME)}</h2>
         <div className={styles.starRating}>
           <ReactStars
             value={reactStarsValue}
@@ -50,7 +55,10 @@ export default function Information(props) {
           <p className={styles.earnPoint}>
             EARN UP TO <span>24 XANHHUB POINTS</span> FOR THIS PURCHASE!
           </p>
-          <form className={styles.form}>
+          <form onSubmit={(e)=>{
+            e.preventDefault()
+           onAddToCart({count:NumItem,id:product.SID,supCode:product.company,img:product.img,price:priceValue,name:product.NAME})
+          }} className={styles.form}>
             <input
               className={styles.num}
               type="number"
@@ -66,13 +74,13 @@ export default function Information(props) {
         </div>
         <div className={styles.icon}>
           {iconURL.map((url, i) => (
-            <div className={styles.iconImage}>
+            <div key={'icon-'+i} className={styles.iconImage}>
               <img src={url} alt={`icon${i}`} />
             </div>
           ))}
         </div>
         <p className={styles.description}>
-          {entities.decode(props.product.des.replace(/\\r\\n/g, ""))}
+          {entities.decode(product.des.replace(/\\r\\n/g, ""))}
         </p>
         <div className={styles.jump}>
           <p className={styles.goTo}>GO TO:</p>

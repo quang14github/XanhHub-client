@@ -62,9 +62,14 @@ display: none;
   }
   .swiper-button-prev , .swiper-button-next{
     color:gray;
+    
     background-color: white;
+    transition: all .4s;
     width:40px;
     height:40px;
     border-radius: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .swiper-button-prev:hover , .swiper-button-next:hover{
+  background-color: rgb(206, 206, 206);      
   }

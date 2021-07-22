@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Footer.module.scss";
-import logo from "Assets/Images/XanhHub.png";
 import phone from "Assets/Images/Icon/phone.png";
 import mail from "Assets/Images/Icon/mail.png";
 import facebook from "Assets/Images/Icon/facebook.svg";
