@@ -14,10 +14,6 @@ const iconURL = [
 ];
 const reactStarsValue = Math.random() * 3 + 3.5;
 const totalReviewValue = Math.floor(Math.random() * 101) + 50;
-const priceValue =
-  `${Math.floor(Math.random() * 5) + 5}` +
-  "." +
-  `${Math.floor(Math.random() * 90) + 10}`;
 export default function Information({ product }) {
   const onAddToCart = useAddToCart();
 
@@ -46,7 +42,7 @@ export default function Information({ product }) {
         <p className={styles.totalReview}>
           ({totalReviewValue} customer review)
         </p>
-        <p className={styles.price}>${priceValue}</p>
+        <p className={styles.price}>${product.PRICE.toFixed(2)}</p>
         <div className={styles.addContainer}>
           <p className={styles.earnPoint}>
             EARN UP TO <span>24 XANHHUB POINTS</span> FOR THIS PURCHASE!
@@ -59,7 +55,7 @@ export default function Information({ product }) {
                 id: product.SID,
                 supCode: product.company,
                 img: product.img,
-                price: priceValue,
+                price: product.PRICE.toFixed(2),
                 name: product.NAME,
                 checkout: false,
               });
