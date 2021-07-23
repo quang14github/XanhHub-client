@@ -3,9 +3,10 @@ import styles from "Assets/Stylesheets/SCSS/Pages/LoginPage.module.scss";
 import { useDispatch } from "react-redux";
 import TYPE from "Store/CONSTANT";
 import { loginUser } from "API";
-
+import { useApplyJWT } from "Hooks/authenHook";
 export default function LoginPage({canClose}) {
   const [isLogin, setMode] = React.useState(true);
+  const onSet=useApplyJWT()
   const [user, setUser] = React.useState({
     username: "",
     password: "",
@@ -23,11 +24,12 @@ export default function LoginPage({canClose}) {
     if (isLogin) {
       loginUser(user).then((res) => {
         if (!res.err) {
-          const { user } = res;
+          const { user,jwt } = res;
           dispatch({
             type: TYPE.loginUserOk,
             payload: { userid: user.USER_ID, role: user.USER_ROLE },
           });
+          onSet({jwt})
         } else {
           console.log("here");
           alert(res.err);

@@ -12,12 +12,22 @@ exports.loginUser=async({username,password})=>{
     }
 }
 
+exports.createCheckout=async({cart,order_infor,jwt})=>{
+    try{
+         return await fetch(`${url}/v1/shop/checkout`,getHeaders({cart,order_infor},"POST",jwt)).then(res=>res.json())
+            
+    }catch(e){
+        return {err:true}
+    }
+}
 
-const getHeaders=(body,method)=>{
+
+const getHeaders=(body,method,jwt='')=>{
     return {
         method: method, 
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization':`Bearer ${jwt}`
         },
         body: JSON.stringify(body)
     }

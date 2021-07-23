@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Cart.module.scss";
-import { useState } from "react";
+//import { useState } from "react";
 import { useSelector } from "react-redux";
 import useCompany from "./useCompany";
 import { useAddToCart } from "Hooks";
@@ -13,14 +13,13 @@ export default function Cart(props) {
   const companys = useCompany();
   const onAddToCart = useAddToCart();
   return (
-    <div className={styles.container}>
-      <div className={styles.topBar}>
+    <div className={`${styles.container}`}>
+      <div  className={`${styles.topBar} ${props.toCheckout?styles.lock:''}`}>
         <div className={styles.topBarProduct}>
           <input
             type="checkbox"
             onClick={() => {
               isCheckoutAll = !isCheckoutAll;
-              console.log(isCheckoutAll);
               userCart.forEach((e) => {
                 onAddToCart({
                   count: "0",
@@ -39,8 +38,8 @@ export default function Cart(props) {
         <p>Quantity</p>
         <p>Subtotal</p>
       </div>
-      {userCart.map((e) => (
-        <div className={styles.product}>
+      {userCart.map((e,i) => (
+        <div key={i} className={`${styles.product} ${props.toCheckout?styles.lock:''}`}>
           <div className={styles.info}>
             <input
               type="checkbox"
@@ -154,8 +153,9 @@ export default function Cart(props) {
               .toFixed(2)}
           </span>
         </div>
-        <button onClick={() => props.checkout(!props.toCheckout)}>
-          CHECKOUT
+       
+        <button disabled={userCart.filter(e=>e.checkout).length<=0} onClick={() => props.checkout(!props.toCheckout)}>
+          {props.toCheckout?'CANCEL':"CHECKOUT"}
         </button>
       </div>
     </div>
