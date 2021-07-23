@@ -4,7 +4,6 @@ import ReactStars from "react-rating-stars-component";
 import useCompany from "Components/useCompany";
 import { useAddToCart } from "Hooks";
 const Entities = require("html-entities").AllHtmlEntities;
-
 const entities = new Entities();
 const iconURL = [
   "https://d13wriz42ny3t5.cloudfront.net/production/2017/06/23231934/icons_b-corp.png",
@@ -62,6 +61,7 @@ export default function Information({ product }) {
                 img: product.img,
                 price: priceValue,
                 name: product.NAME,
+                checkout: false,
               });
             }}
             className={styles.form}

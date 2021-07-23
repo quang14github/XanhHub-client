@@ -11,7 +11,8 @@ const useAddToCart = () => {
         return;
       }
       if (newItem.id) {
-        dispatch({ type: TYPE.addToCart, payload: newItem });
+        if (newItem.count) dispatch({ type: TYPE.addToCart, payload: newItem });
+        else dispatch({ type: TYPE.removeFromCart, payload: newItem });
       }
     },
     [isLogged]

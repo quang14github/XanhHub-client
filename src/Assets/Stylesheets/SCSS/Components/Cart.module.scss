@@ -12,7 +12,7 @@
   grid-template-columns: 3fr repeat(3, 1fr);
   border: 1px solid gray;
   padding: 15px 25px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   p {
     text-align: center;
   }
@@ -32,6 +32,7 @@
   grid-template-columns: 1fr 1fr;
   border: 1px solid gray;
   padding: 15px 25px 10px;
+  margin-bottom: 20px;
   @media screen and (max-width: 600px) {
     grid-template-columns: 1fr;
     grid-gap: 10px;
@@ -103,6 +104,27 @@
     border-radius: 3px;
     font-size: 14px;
     padding: 10px 15px;
+  }
+}
+.checkoutArea {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid gray;
+  padding: 10px 15px;
+  margin-top: 10px;
+  div {
+    padding: 10px 15px 10px 0;
+    font-size: 18px;
+    span {
+      font-size: 20px;
+      padding-left: 10px;
+    }
+  }
+  button {
+    background-color: var(--button-primary);
+    padding: 10px 15px;
+  }
+  @media screen and (max-width: 400px) {
   }
 }
 @media screen and( max-width: 600px) {
