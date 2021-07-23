@@ -65,7 +65,7 @@ export default function Cart(props) {
               <p className={styles.shop_name}>
                 {entities.decode(companys[e.supCode].name)}
               </p>
-              <p className={styles.product_name}>{e.name}</p>
+              <p className={styles.product_name}>{entities.decode(e.name)}</p>
             </div>
           </div>
           <div className={styles.subInfo}>
