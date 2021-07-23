@@ -20,6 +20,14 @@ exports.createCheckout=async({cart,order_infor,jwt})=>{
         return {err:true}
     }
 }
+exports.getHistory=async({filter,jwt})=>{
+    try{
+         return await fetch(`${url}/v1/shop/order?filter=${filter}`,getHeaders({},"GET",jwt)).then(res=>res.json())
+            
+    }catch(e){
+        return {err:true}
+    }
+}
 
 
 const getHeaders=(body,method,jwt='')=>{
