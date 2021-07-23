@@ -6,32 +6,41 @@ const words = [
   { name: "hoa quả xanh", tag: "" },
   { name: "đồ dùng tái chế", tag: "" },
   { name: "đồ giấy", tag: "" },
-
 ];
 
-const categories=[
-  {name:"All",tag:'all'},
-  {name:"Grocery",tag:'grocery'},
-  {name:'Fruit',tag:'fruit'},
-  {name:'Household appliance',tag:"household"},
-  {name:'Vegetables',tag:'veget'},
-  {name:'Paper stuff',tag:'paper'},
-
+const categories = [
+  { name: "All", tag: "all" },
+  { name: "Beauty And Care", tag: "beautyandcare" },
+  { name: "Clothing", tag: "clothing" },
+  { name: "Lunchtime", tag: "lunchtime" },
+  { name: "Audio Tech", tag: "audio_tech" },
+  { name: "Toys", tag: "toys" },
 
   //
-  
-]
-export default function SearchFilter({ category }) {
- 
-
+];
+export default function SearchFilter(props) {
   return (
     <div className={styles.filter}>
-      
       <div className={styles.container}>
-      <p>Popular</p>
-       <SliderMenu type="small" select="one" words={words} radius={500} height={40}/>
-       <p>All category</p>
-       <SliderMenu type="medium" color="second" select="multiple" words={categories} radius={5} height={70}/>
+        <p>Popular</p>
+        <SliderMenu
+          type="small"
+          select="one"
+          words={words}
+          radius={500}
+          height={40}
+          insert={(word) => props.insert(word)}
+        />
+        <p>All category</p>
+        <SliderMenu
+          type="medium"
+          color="second"
+          select="multiple"
+          words={categories}
+          radius={5}
+          height={70}
+          insert={(word) => props.insert(word)}
+        />
       </div>
     </div>
   );
