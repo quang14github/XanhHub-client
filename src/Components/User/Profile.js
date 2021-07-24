@@ -2,19 +2,19 @@ import React from "react";
 import { useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Profile.module.scss";
 const defaultInfo = {
-  name: "Nguyen Van A",
+  name: "User Name",
   address: "1st Dai Co Viet, Hai Ba Trung, Ha Noi, Viet Nam",
   password: "123456789",
-  email: "nguyenvana@gmail.com",
+  email: "xanhhub@gmail.com",
   phone: "0123456789",
 };
 export default function Profile() {
-  const [Name, setName] = useState("Nguyen Van A");
+  const [Name, setName] = useState("User Name");
   const [Address, setAddress] = useState(
     "1st Dai Co Viet, Hai Ba Trung, Ha Noi, Viet Nam"
   );
   const [Password, setPassword] = useState("123456789");
-  const [Email, setEmail] = useState("nguyenvana@gmail.com");
+  const [Email, setEmail] = useState("xanhhub@gmail.com");
   const [Phone, setPhone] = useState("0123456789");
   const [Mutable, setMutable] = useState(true);
   const [Editing, setEditing] = useState(false);
@@ -24,7 +24,7 @@ export default function Profile() {
     setAddress(obj.address);
     setPassword(obj.password);
     setEmail(obj.email);
-    setPhone();
+    setPhone(obj.phone);
   }
   const basicInfoInputs = [
     { label: "Name", id: "name", type: "text", value: Name, cb: setName },

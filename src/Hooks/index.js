@@ -36,4 +36,16 @@ const useSelectCategory = () => {
   };
   return onSelectCategory;
 };
-export { useAddToCart, useInputSearch, useSelectCategory };
+const useRemoveAfterCheckout = () => {
+  const dispatch = useDispatch();
+  const onRemoveAfterCheckout = (newRemove) => {
+    dispatch({ type: TYPE.removeAfterCheckout, payload: newRemove });
+  };
+  return onRemoveAfterCheckout;
+};
+export {
+  useAddToCart,
+  useInputSearch,
+  useSelectCategory,
+  useRemoveAfterCheckout,
+};
