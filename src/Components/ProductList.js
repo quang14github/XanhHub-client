@@ -2,6 +2,7 @@ import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/ProductList.module.scss";
 import sample from "Assets/JS/products";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import "swiper/components/navigation/navigation.min.css"
 
 import SwiperCore, {
@@ -11,7 +12,7 @@ import SwiperCore, {
   // install Swiper modules
   SwiperCore.use([Navigation]);
   
-export default function ProductList({ rows, pagination = false ,category=null}) {
+export default function ProductList({ SID, pagination = false ,category=null}) {
   const [product,setProducts]=React.useState(null)
   React.useEffect(async()=>{
     if(category){
@@ -28,7 +29,7 @@ export default function ProductList({ rows, pagination = false ,category=null}) 
       
      
     }
-  },[category])
+  },[category,SID])
   return (
     <div className={styles.container}>
       <Swiper
@@ -69,10 +70,11 @@ const SampleProduct = ({ data }) => {
 
 const ProductItem = ({ data }) => {
   return (
+    <Link to={`/product/${data.SID}`}>
     <div title={data.post_title} className={styles.product}>
       <img src={data.img} alt={data.NAME} />
       <p className={styles.price}>$:{parseFloat(data.PRICE).toFixed(2)}</p>
       <p>{data.NAME.substring(0, 20)}</p>
-    </div>
+    </div></Link>
   );
 };

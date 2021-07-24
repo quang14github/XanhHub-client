@@ -34,13 +34,13 @@ import ProductList from "Components/ProductList";
   //   price: "$24.99",
   // },
 //];
-export default function RelatedProduct({cat}) {
+export default function RelatedProduct({cat,SID}) {
   
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>RELATED PRODUCTS</h3>
     
-      <ProductList category={cat}/>
+      <ProductList SID={SID} category={cat}/>
     </div>
   );
 }

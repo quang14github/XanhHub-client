@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/SidePanel.module.scss";
 import Avatar from "Components/Avatar";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import TYPE from "Store/CONSTANT";
 const tabs = [
   { name: "Account details", id: "account/me" },
@@ -12,6 +12,7 @@ const tabs = [
 export default function SidePanel() {
   const url = useHistory();
   const dispatch = useDispatch();
+  
   const [Active, setActive] = useState(null);
   return (
     <div className={styles.container}>

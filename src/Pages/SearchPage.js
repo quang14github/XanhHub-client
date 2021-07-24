@@ -77,15 +77,15 @@ export default function SearchPage() {
         <div className={styles.initialView}>
           <div>
             <h1>Recommend For You</h1>
-            <ProductList />
+            <ProductList  category='beautyandcare' />
           </div>
           <div>
             <h1>Hot Deals</h1>
-            <ProductList />
+            <ProductList  category="toy" />
           </div>
           <div>
             <h1>New Arrivals</h1>
-            <ProductList />
+            <ProductList  category="lunchtime" />
           </div>
         </div>
       )}

@@ -27,7 +27,7 @@ export default function ProductPage(props) {
           <div className={styles.product}>
             <div className={styles.main}>
               <Information product={thisProduct} />
-              <RelatedProduct cat={thisProduct.CATEGORY}/>
+              <RelatedProduct SID={thisProduct.SID} cat={thisProduct.CATEGORY}/>
             </div>
           </div>
           <ListInfo product={thisProduct} />
