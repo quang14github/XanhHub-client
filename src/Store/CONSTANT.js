@@ -5,5 +5,7 @@ const action = {
   logOutUser: "user/Logout",
   addToCart: "cart/addToCart",
   removeFromCart: "cart/removeFromCart",
+  inputSearch: "/search/inputSearch",
+  selectCategory: "/search/selectCategory",
 };
 export default action;

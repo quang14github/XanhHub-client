@@ -18,7 +18,7 @@ const categories = [
 
   //
 ];
-export default function SearchFilter(props) {
+export default function SearchFilter() {
   return (
     <div className={styles.filter}>
       <div className={styles.container}>
@@ -29,7 +29,6 @@ export default function SearchFilter(props) {
           words={words}
           radius={500}
           height={40}
-          insert={(word) => props.insert(word)}
         />
         <p>All category</p>
         <SliderMenu
@@ -39,7 +38,6 @@ export default function SearchFilter(props) {
           words={categories}
           radius={5}
           height={70}
-          insert={(word) => props.insert(word)}
         />
       </div>
     </div>
