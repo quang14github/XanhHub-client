@@ -5,7 +5,10 @@ const defaultState = {
 };
 const search = (state = defaultState, action) => {
   if (action.type === TYPE.inputSearch) {
-    return { ...state, searchInput: action.payload.content };
+    return {
+      ...state,
+      searchInput: action.payload.content,
+    };
   }
   if (action.type === TYPE.selectCategory) {
     return { ...state, category: action.payload.content };

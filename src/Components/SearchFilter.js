@@ -14,7 +14,7 @@ const categories = [
   { name: "Clothing", tag: "clothing" },
   { name: "Lunchtime", tag: "lunchtime" },
   { name: "Audio Tech", tag: "audio_tech" },
-  { name: "Toys", tag: "toys" },
+  { name: "Toys", tag: "toy" },
 
   //
 ];
