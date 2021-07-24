@@ -1,6 +1,6 @@
 const url='http://207.46.145.28'
 
-exports.loginUser=async({username,password})=>{
+const loginUser=async({username,password})=>{
     try{
         const data=await fetch(`${url}/v1/user/login`,getHeaders({username,password},"POST")).then(res=>res.json())
 
@@ -11,14 +11,14 @@ exports.loginUser=async({username,password})=>{
         return {err:e.message}
     }
 }
-exports.signUpUser=async({username,password,email})=>{
+const signUpUser=async({username,password,email})=>{
     try{
         return await fetch(`${url}/v1/user/signup`,getHeaders({username,password,email},"POST")).then(res=>res.json())
     }catch(e){
         return {err:e.message}
     }
 }
-exports.createCheckout=async({cart,order_infor,jwt})=>{
+export async function createCheckout({cart,order_infor,jwt}){
     try{
          return await fetch(`${url}/v1/shop/checkout`,getHeaders({cart,order_infor},"POST",jwt)).then(res=>res.json())
             
@@ -26,7 +26,7 @@ exports.createCheckout=async({cart,order_infor,jwt})=>{
         return {err:true}
     }
 }
-exports.getHistory=async({filter,jwt})=>{
+const getHistory=async({filter,jwt})=>{
     try{
        const Header=getHeaders({noBody:true},"GET",jwt)
          return await fetch(`${url}/v1/shop/order?filter=${filter}`,Header).then(res=>res.json())
@@ -35,14 +35,14 @@ exports.getHistory=async({filter,jwt})=>{
         return {err:true}
     }
 }
-exports.getProductInfor=async({id})=>{
+const getProductInfor=async({id})=>{
     try{
         return await fetch(`${url}/v1/product/byid?id=${id}`).then(res=>res.json())
     }catch(e){
 
     }
 }
-exports.confirmReceived=async({SID,jwt})=>{
+export async function confirmReceived ({SID,jwt}){
     try{
             return await fetch(`${url}/v1/shop/confirm`,getHeaders({SID},"PUT",jwt)).then(res=>res.json())
     }catch(e){
@@ -61,3 +61,4 @@ const getHeaders=(body,method,jwt='')=>{
         body:method!=='GET'? JSON.stringify(body):null
     }
 }
+export {loginUser,signUpUser,getHistory,getProductInfor}

@@ -2,7 +2,7 @@
 import { JwtContext } from './Context';
 import React from 'react'
 import {createCheckout} from 'API/index'
-import {getHistory,confirmReceived} from 'API'
+import {getHistory,confirmReceived} from '../API/index'
 
 export function useApplyJWT(){
     const test=React.useContext(JwtContext)
