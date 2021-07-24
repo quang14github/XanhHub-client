@@ -34,20 +34,13 @@ import ProductList from "Components/ProductList";
   //   price: "$24.99",
   // },
 //];
-export default function RelatedProduct() {
+export default function RelatedProduct({cat}) {
+  
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>RELATED PRODUCTS</h3>
-      {/* <div className={styles.products}>
-        {products.map((product) => (
-          <div className={styles.product}>
-            <img src={product.url} alt={product.name} />
-            <p className={styles.name}>{product.name}</p>
-            <p className={styles.price}>{product.price}</p>
-          </div>
-        ))}
-      </div> */}
-      <ProductList/>
+    
+      <ProductList category={cat}/>
     </div>
   );
 }
