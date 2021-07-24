@@ -5,6 +5,8 @@ import SearchBar from "Components/SearchBar";
 import SearchFilter from "Components/SearchFilter";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ReactStars from "react-rating-stars-component";
+import ProductList from "Components/ProductList";
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 export default function SearchPage() {
@@ -59,13 +61,33 @@ export default function SearchPage() {
                     {entities.decode(e.NAME)}
                   </p>
                   <p className={styles.productPrice}>${e.PRICE.toFixed(2)}</p>
+                  <ReactStars
+                    value={e.AVG_RATING}
+                    activeColor="#ecb338"
+                    isHalf={true}
+                    size={15}
+                    edit={false}
+                  />
                 </div>
               </Link>
             ))}
           </div>
         </div>
       ) : (
-        <div></div>
+        <div className={styles.initialView}>
+          <div>
+            <h1>Recommend For You</h1>
+            <ProductList />
+          </div>
+          <div>
+            <h1>Hot Deals</h1>
+            <ProductList />
+          </div>
+          <div>
+            <h1>New Arrivals</h1>
+            <ProductList />
+          </div>
+        </div>
       )}
       {/* </div> */}
     </Layout>

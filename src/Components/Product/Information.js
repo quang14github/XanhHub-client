@@ -12,8 +12,7 @@ const iconURL = [
   "https://d13wriz42ny3t5.cloudfront.net/production/2017/07/23231914/bpa_free.png",
   "https://d13wriz42ny3t5.cloudfront.net/production/2017/06/23231930/icons_made-in-the-usa.png",
 ];
-const reactStarsValue = Math.random() * 3 + 3.5;
-const totalReviewValue = Math.floor(Math.random() * 101) + 50;
+
 export default function Information({ product }) {
   const onAddToCart = useAddToCart();
 
@@ -32,7 +31,7 @@ export default function Information({ product }) {
         <h2 className={styles.name}>{entities.decode(product.NAME)}</h2>
         <div className={styles.starRating}>
           <ReactStars
-            value={reactStarsValue}
+            value={product.AVG_RATING}
             activeColor="#ecb338"
             isHalf={true}
             size={22}
@@ -40,7 +39,7 @@ export default function Information({ product }) {
           />
         </div>
         <p className={styles.totalReview}>
-          ({totalReviewValue} customer review)
+          ({product.RATE_COUNTS} customer review)
         </p>
         <p className={styles.price}>${product.PRICE.toFixed(2)}</p>
         <div className={styles.addContainer}>
