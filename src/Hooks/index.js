@@ -23,9 +23,7 @@ const useAddToCart = () => {
 const useInputSearch = () => {
   const dispatch = useDispatch();
   const onInputSearch = (newSearch) => {
-    if (newSearch.content) {
-      dispatch({ type: TYPE.inputSearch, payload: newSearch });
-    }
+    dispatch({ type: TYPE.inputSearch, payload: newSearch });
   };
   return onInputSearch;
 };
