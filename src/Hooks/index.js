@@ -20,5 +20,22 @@ const useAddToCart = () => {
 
   return onAddtoCart;
 };
-
-export { useAddToCart };
+const useInputSearch = () => {
+  const dispatch = useDispatch();
+  const onInputSearch = (newSearch) => {
+    if (newSearch.content) {
+      dispatch({ type: TYPE.inputSearch, payload: newSearch });
+    }
+  };
+  return onInputSearch;
+};
+const useSelectCategory = () => {
+  const dispatch = useDispatch();
+  const onSelectCategory = (newCategory) => {
+    if (newCategory.content) {
+      dispatch({ type: TYPE.selectCategory, payload: newCategory });
+    }
+  };
+  return onSelectCategory;
+};
+export { useAddToCart, useInputSearch, useSelectCategory };

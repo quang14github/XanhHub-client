@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/SliderMenu.module.scss";
 import leftButton from "Assets/Images/left.svg";
-
+import { useSelectCategory } from "Hooks";
 export default function SliderMenu({
   words,
   color = "primary",
@@ -9,8 +9,8 @@ export default function SliderMenu({
   select = "one",
   height = 30,
   radius = 0,
-  insert,
 }) {
+  const onSelectCategory = useSelectCategory();
   const Ref = React.useRef(null);
   const [showLeft, setLeft] = useState(false);
   const [showRight, setRight] = useState(false);
@@ -108,7 +108,11 @@ export default function SliderMenu({
                     ? "var(--button-primary)"
                     : "var(--banner-primary-background)",
               }}
-              onClick={() => insert(e.tag)}
+              onClick={() =>
+                onSelectCategory({
+                  content: e.tag,
+                })
+              }
             >
               {e.name}
             </p>

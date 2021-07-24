@@ -4,12 +4,13 @@ import styles from "Assets/Stylesheets/SCSS/Pages/SearchPage.module.scss";
 import SearchBar from "Components/SearchBar";
 import SearchFilter from "Components/SearchFilter";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 export default function SearchPage() {
-  const [searchInput, setSearchInput] = useState();
+  const searchInput = useSelector((state) => state.search.searchInput);
   const [productArray, setProductArray] = useState();
-  const [category, setCategory] = useState();
+  const category = useSelector((state) => state.search.category);
   useEffect(() => {
     requestProduct();
   }, [searchInput, category]);
@@ -39,11 +40,11 @@ export default function SearchPage() {
       <div className={styles.searchBox}>
         <div className={styles.overlay}></div>
         <div className={styles.searchPosition}>
-          <SearchBar insert={(keyword) => setSearchInput(keyword)} />
+          <SearchBar />
         </div>
       </div>
       <div className={styles.filter}>
-        <SearchFilter insert={(word) => setCategory(word)} />
+        <SearchFilter />
       </div>
       {productArray ? (
         <div className={styles.background}>
