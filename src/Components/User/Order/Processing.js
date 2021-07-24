@@ -20,7 +20,7 @@ export default function Processing({ queue, onReiceived }) {
   return (
     <div className={styles.content}>
       {queue.map((e, i) => (
-        <Product onClick={onClick(i)} isQueue={true} key={i} e={e} />
+        <Product onClick={onClick(i)} isQueue={true} key={`${e.SID}-${e.ORDER_ID} ${e.PRODUCT_ID}`} e={e} />
       ))}
     </div>
   );
