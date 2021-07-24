@@ -2,7 +2,7 @@ import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Pages/LoginPage.module.scss";
 import { useDispatch } from "react-redux";
 import TYPE from "Store/CONSTANT";
-import { loginUser } from "API";
+import { loginUser ,signUpUser} from "API";
 import { useApplyJWT } from "Hooks/authenHook";
 import useSession from 'Hooks/useSession'
 
@@ -39,6 +39,24 @@ export default function LoginPage({canClose}) {
           alert(res.err);
         }
       });
+    }else{
+
+      signUpUser(user).then(res=>{
+        console.log(res);
+        if (!res.err) {
+          const { user,jwt } = res;
+          dispatch({
+            type: TYPE.loginUserOk,
+            payload: { userid: user.USER_ID, role: user.USER_ROLE },
+          });
+          onSet({jwt})
+          saveUser(res)
+        } else {
+          console.log("here");
+          alert(res.err);
+        }
+
+      })
     }
   };
   const onClose = () => {
@@ -73,14 +91,7 @@ export default function LoginPage({canClose}) {
           onChange={onChange("password")}
           placeholder="password"
         />
-        {!isLogin && (
-          <input
-            value={user.rePassword}
-            onChange={onChange("rePassword")}
-            type="password"
-            placeholder="re-password"
-          />
-        )}
+        
         <button className="button bg-second" type="submit">
           {isLogin ? "Login" : "Signup"}
         </button>
