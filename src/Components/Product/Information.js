@@ -58,6 +58,7 @@ export default function Information({ product }) {
                 name: product.NAME,
                 checkout: false,
               });
+              alert(`ADDED ${NumItem} x ${product.NAME}!`);
             }}
             className={styles.form}
           >

@@ -26,8 +26,15 @@ const cart = (state = defaultState, action) => {
   if (action.type === TYPE.removeFromCart) {
     const newCart = [...state.cart.filter((e) => e.id !== action.payload.id)];
     return { ...state, cart: newCart };
-  }else if(action.type===TYPE.restoreCart){
-      return {...state,cart:[...action.payload]}
+  } else if (action.type === TYPE.restoreCart) {
+    return { ...state, cart: [...action.payload] };
+  } else if (action.type === TYPE.removeAfterCheckout) {
+    const newCart = state.cart.filter(
+      (inCart) =>
+        action.payload.findIndex((toRemove) => toRemove.id === inCart.id) === -1
+    );
+    console.log(newCart);
+    return { ...state, cart: newCart };
   }
 
   return state;
