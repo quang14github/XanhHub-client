@@ -11,7 +11,13 @@ exports.loginUser=async({username,password})=>{
         return {err:e.message}
     }
 }
-
+exports.signUpUser=async({username,password,email})=>{
+    try{
+        return await fetch(`${url}/v1/user/signup`,getHeaders({username,password,email},"POST")).then(res=>res.json())
+    }catch(e){
+        return {err:e.message}
+    }
+}
 exports.createCheckout=async({cart,order_infor,jwt})=>{
     try{
          return await fetch(`${url}/v1/shop/checkout`,getHeaders({cart,order_infor},"POST",jwt)).then(res=>res.json())
