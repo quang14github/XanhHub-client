@@ -1,66 +1,84 @@
 import React from "react";
 import styles from "Assets/Stylesheets/SCSS/Components/Order.module.scss";
-const order = [
-  {
-    shop: "3ccases.vn",
-    status: "PENDING",
-    image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
-    name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
-    price: "$58.000",
-    quantity: "1",
-    total: "$55.000",
-    button: "RECEIVED",
-  },
-  {
-    shop: "3ccases.vn",
-    status: "PENDING",
-    image: "https://cf.shopee.vn/file/0d8e38c9ba0da4b2ff60a6a51f6bd737",
-    name: "Vỏ bảo vệ hộp sạc tai nghe silicon mềm họa tiết gấu hoạt hình Hàn Quốc 2020 kèm dây treo cho Samsung Galaxy Buds +",
-    price: "$58.000",
-    quantity: "1",
-    total: "$55.000",
-    button: "RECEIVED",
-  },
-];
-export default function Processing() {
+import { getProductInfor } from "API";
+import { useReceived } from "Hooks/authenHook";
+
+export default function Processing({ queue, onReiceived }) {
+  const onConfirm = useReceived();
+  const onClick = (i) => {
+    return async() => {
+     
+    return await  onConfirm({ SID: queue[i].SID }).then((res) => {
+        if(res.status){
+          onReiceived({index:i})
+        }
+
+        return true
+      });
+    };
+  };
   return (
     <div className={styles.content}>
-      {order.map((e) => (
-        <div className={styles.order}>
-          <div className={styles.bar}>
-            <div className={styles.shop}>
-              <p>{e.shop}</p>
-              <div className={styles.barButtonGroup}>
-                <button className={styles.chat}>Chat</button>
-                <button className={styles.viewShop}>View Shop</button>
-              </div>
-            </div>
-            <div className={styles.status}>{e.status}</div>
-          </div>
-          <div className={styles.product}>
-            <div className={styles.image}>
-              <img src={e.image} alt="product" />
-            </div>
-            <div className={styles.info}>
-              <div className={styles.nameAndQuantity}>
-                <p className={styles.name}>{e.name}</p>
-                <p className={styles.quantity}>X{e.quantity}</p>
-              </div>
-              <p className={styles.price}>{e.price}</p>
-            </div>
-          </div>
-          <div>
-            <p className={styles.total}>
-              Total cost:
-              <span>{e.total}</span>
-            </p>
-            <div className={styles.buttonGroup}>
-              <button className={styles.mainButton}>{e.button}</button>
-              <button className={styles.sideButton}>CONTACT SELLER</button>
-            </div>
-          </div>
-        </div>
+      {queue.map((e, i) => (
+        <Product onClick={onClick(i)} isQueue={true} key={i} e={e} />
       ))}
     </div>
   );
 }
+
+const Product = ({
+  e,
+  isQueue = false,
+  isSuccess = false,
+  isCancel = false,
+  onClick,
+}) => {
+  const [detail, setDetail] = React.useState({});
+  const [lock,setLock]=React.useState(false)
+  React.useEffect(() => {
+    getProductInfor({ id: e.PRODUCT_ID }).then((res) => {
+      if (!res.err) {
+        setDetail(res);
+      }
+    });
+  }, [e]);
+  React.useEffect(()=>{
+    if(lock){
+      onClick()
+    }
+  },[lock])
+  return (
+    <div className={styles.order}>
+      <div className={styles.product}>
+        <div className={styles.image}>
+          <img src={detail?.img} alt="product" />
+        </div>
+        <div className={styles.info}>
+          <div className={styles.nameAndQuantity}>
+            <p className={styles.name}>{detail?.NAME}</p>
+            <p className={styles.quantity}>X{e.QUANTITY}</p>
+          </div>
+          <p className={styles.price}>{parseFloat(e.TOTAL_PRICE).toFixed(2)}</p>
+        </div>
+      </div>
+      <div className={styles.groupButton}>
+        {isQueue && <button disabled={lock} onClick={()=>{
+          setLock(true)
+        }}>Received</button>}
+        {isSuccess && <button>Rating</button>}
+        {isCancel && <button>Rebuy</button>}
+        <p className={styles.total}>
+          <strong>Total:</strong>
+          <span>
+            {(parseFloat(e.TOTAL_PRICE) * parseInt(e.QUANTITY)).toFixed(2)}
+          </span>
+        </p>
+        {/* <div className={styles.buttonGroup}>
+        <button className={styles.mainButton}>{e.button}</button>
+        <button className={styles.sideButton}>CONTACT SELLER</button>
+      </div> */}
+      </div>
+    </div>
+  );
+};
+export { Product };

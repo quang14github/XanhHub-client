@@ -28,9 +28,13 @@
 
 // order
 .content {
-  padding: 10px 0;
+  padding: 10px;
+  height: 80vh;
+  overflow-y: auto;
   .order {
-    // background-color: gray;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    margin:5px 0;
     padding: 10px 30px;
     .bar {
       display: grid;
@@ -81,7 +85,7 @@
   grid-template-columns: 100px 1fr;
   grid-gap: 10px;
   padding: 10px 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.308);
   .image {
     img {
       width: 100%;
@@ -135,5 +139,18 @@
     background-color: var(--button-primary);
     border-color: var(--button-primary);
     border-radius: 3px;
+  }
+}
+
+.groupButton{
+  display: grid;
+  margin-top: 5px;
+  grid-template-columns: max-content 1fr;
+  button{
+    background-color: var(--secondary-background-trans);
+    border-radius: 5px;
+    padding:15px;
+    color:white;
+    font-size: 1rem;
   }
 }

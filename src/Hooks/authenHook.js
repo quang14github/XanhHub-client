@@ -2,13 +2,16 @@
 import { JwtContext } from './Context';
 import React from 'react'
 import {createCheckout} from 'API/index'
-import {getHistory} from 'API'
+import {getHistory,confirmReceived} from 'API'
 
 export function useApplyJWT(){
     const test=React.useContext(JwtContext)
     const onSetJWT=({jwt})=>{
-        
-        test.setJWT(jwt)
+        console.log('running',test);
+        if(test?.setJWT){
+
+            test.setJWT(jwt)
+        }
     }
     return onSetJWT
     
@@ -28,8 +31,17 @@ export function useCreateCheckout(){
 export function useHistoryCheckout(){
     const {jwt}=React.useContext(JwtContext)
     const onGetHistory=async({filter})=>{
-        
+        return await getHistory({filter,jwt}).then(res=>res)
     }
 
     return onGetHistory
+}
+
+export function useReceived(){
+    const {jwt}=React.useContext(JwtContext)
+    const onConfirm=async({SID})=>{
+        return await confirmReceived({SID,jwt}).then(res=>res)
+    }
+
+    return onConfirm
 }

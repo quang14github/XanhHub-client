@@ -4,8 +4,11 @@ import { useDispatch } from "react-redux";
 import TYPE from "Store/CONSTANT";
 import { loginUser } from "API";
 import { useApplyJWT } from "Hooks/authenHook";
+import useSession from 'Hooks/useSession'
+
 export default function LoginPage({canClose}) {
   const [isLogin, setMode] = React.useState(true);
+  const {saveUser}=useSession()
   const onSet=useApplyJWT()
   const [user, setUser] = React.useState({
     username: "",
@@ -30,6 +33,7 @@ export default function LoginPage({canClose}) {
             payload: { userid: user.USER_ID, role: user.USER_ROLE },
           });
           onSet({jwt})
+          saveUser(res)
         } else {
           console.log("here");
           alert(res.err);

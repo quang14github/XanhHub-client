@@ -22,14 +22,28 @@ exports.createCheckout=async({cart,order_infor,jwt})=>{
 }
 exports.getHistory=async({filter,jwt})=>{
     try{
-         return await fetch(`${url}/v1/shop/order?filter=${filter}`,getHeaders({},"GET",jwt)).then(res=>res.json())
+       const Header=getHeaders({noBody:true},"GET",jwt)
+         return await fetch(`${url}/v1/shop/order?filter=${filter}`,Header).then(res=>res.json())
             
     }catch(e){
         return {err:true}
     }
 }
+exports.getProductInfor=async({id})=>{
+    try{
+        return await fetch(`${url}/v1/product/byid?id=${id}`).then(res=>res.json())
+    }catch(e){
 
+    }
+}
+exports.confirmReceived=async({SID,jwt})=>{
+    try{
+            return await fetch(`${url}/v1/shop/confirm`,getHeaders({SID},"PUT",jwt)).then(res=>res.json())
+    }catch(e){
+        return {err:e.message}
+    }
 
+}
 const getHeaders=(body,method,jwt='')=>{
     return {
         method: method, 
@@ -37,6 +51,6 @@ const getHeaders=(body,method,jwt='')=>{
           'Content-Type': 'application/json',
           'Authorization':`Bearer ${jwt}`
         },
-        body: JSON.stringify(body)
+        body:method!=='GET'? JSON.stringify(body):null
     }
 }

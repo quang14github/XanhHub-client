@@ -32,6 +32,7 @@ export default function SidePanel() {
               }
               onClick={() => {
                 if (e.id === "logout") {
+                  window.localStorage.removeItem('session-user')
                   dispatch({ type: TYPE.logOutUser });
                   return;
                 }
