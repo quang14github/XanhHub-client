@@ -7,5 +7,6 @@ const action = {
   removeFromCart: "cart/removeFromCart",
   inputSearch: "/search/inputSearch",
   selectCategory: "/search/selectCategory",
+  restoreCart: "cart/restoreCart",
 };
 export default action;

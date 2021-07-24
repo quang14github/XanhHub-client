@@ -1,7 +1,7 @@
 import TYPE from "../CONSTANT";
 
 const defaultState = {
-  cart: [],
+  cart: null,
   status: false,
   lastUpdate: null,
 };
@@ -26,6 +26,8 @@ const cart = (state = defaultState, action) => {
   if (action.type === TYPE.removeFromCart) {
     const newCart = [...state.cart.filter((e) => e.id !== action.payload.id)];
     return { ...state, cart: newCart };
+  }else if(action.type===TYPE.restoreCart){
+      return {...state,cart:[...action.payload]}
   }
 
   return state;

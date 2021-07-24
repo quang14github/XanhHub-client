@@ -14,9 +14,8 @@ const routes = [
 const links = [
   { name: "Home", path: "/" },
   { name: "Discovery", path: "/search" },
-  { name: "Blog", path: "/" },
-  // { name: "Cart", path: "/cart" },
-  // {name:'User',path:'/user'},
+  
+  
 ];
 export { links };
 export default routes;

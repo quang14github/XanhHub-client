@@ -15,8 +15,8 @@ function App() {
   );
 }
 const Main = () => {
-  useRestore();
-  return (
+  const isLoad=useRestore();
+  return isLoad&&(
     <Switch>
       {pages.map((page, i) => (
         <Route
