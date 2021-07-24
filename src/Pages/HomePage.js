@@ -10,7 +10,12 @@ import recycle from "Assets/Images/recycle.jpg";
 import productImg from "Assets/Images/product.png";
 import shipImg from "Assets/Images/ship.png";
 import recImg from "Assets/Images/recommend.png";
-
+import { Link } from "react-router-dom";
+const small_banner=[
+  {id:'recycle',name:'Recycle',des:"Our products is made with Recycle-ablility in mind",img:recycle},
+  {id:"friendly",name:'Variety',des:'We have many suppliers with hundreds of products.',img:zeroWatse},
+  {id:"variety",name:'Contact',des:'Contact us if you want to be a supplier.',img:friendly}
+]
 export default function HomePage() {
   return (
     <Layout>
@@ -19,17 +24,18 @@ export default function HomePage() {
 
       <About />
       <div style={{backgroundColor:'var(--secondary-background-trans)'}} className={styles.brandName}>
-            <h1>Verified Products</h1>
+            <h1>Our Products</h1>
         </div>
       <div className={styles.groupBanners}>
-        <SmallBanner bg={recycle} />
-        <SmallBanner bg={zeroWatse} />
-        <SmallBanner bg={friendly} />
+        {small_banner.map(e=><SmallBanner name={e.name} key={e.id} des={e.des} bg={e.img} />)}
       </div>
 
       <div className={styles.loginSuggest}>
           <h3>Feel Interested?</h3>
+          <Link to='/search'>
           <button className={`button ${styles.buttonLogin}`}>Try IT</button>
+
+          </Link>
       </div>
 
       
