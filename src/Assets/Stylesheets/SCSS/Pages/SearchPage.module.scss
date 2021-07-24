@@ -39,13 +39,15 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: max-content;
   grid-gap: 5px;
   padding: 30px 10px;
 }
 .productContainer {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr max-content;
+  grid-template-rows: max-content 1fr 20px 30px;
+  height: 100%;
   &:hover {
     border: 2px solid var(--button-secondary);
   }
@@ -60,5 +62,16 @@
   }
   .productPrice {
     padding: 0 10px;
+  }
+}
+.initialView {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  div {
+    padding: 10px;
+    h1 {
+      text-align: center;
+    }
   }
 }
