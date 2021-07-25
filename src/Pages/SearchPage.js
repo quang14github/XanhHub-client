@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ReactStars from "react-rating-stars-component";
 import ProductList from "Components/ProductList";
+import { useSelectCategory } from "Hooks";
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 export default function SearchPage() {
   const searchInput = useSelector((state) => state.search.searchInput);
   const [productArray, setProductArray] = useState();
   const category = useSelector((state) => state.search.category);
+  const userId = useSelector((state) => state.user.userid);
   useEffect(() => {
     requestProduct();
   }, [searchInput, category]);
@@ -77,15 +79,15 @@ export default function SearchPage() {
         <div className={styles.initialView}>
           <div>
             <h1>Recommend For You</h1>
-            <ProductList  category='beautyandcare' />
+            <ProductList type="CF" USER_ID={userId} limit="10" />
           </div>
           <div>
             <h1>Hot Deals</h1>
-            <ProductList  category="toy" />
+            <ProductList category="toy" />
           </div>
           <div>
             <h1>New Arrivals</h1>
-            <ProductList  category="lunchtime" />
+            <ProductList category="lunchtime" />
           </div>
         </div>
       )}
