@@ -87,11 +87,7 @@ export default function ProductList({
                 <ProductItem data={e} />
               </SwiperSlide>
             ))
-          : sample.map((e) => (
-              <SwiperSlide key={e.id}>
-                <SampleProduct data={e} />
-              </SwiperSlide>
-            ))}
+          : <p>loading! please wait...</p>}
 
         <div class="swiper-button-next"> {">"}</div>
         <div class="swiper-button-prev">{"<"}</div>

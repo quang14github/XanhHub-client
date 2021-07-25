@@ -14,7 +14,7 @@ export default function SearchPage() {
   const searchInput = useSelector((state) => state.search.searchInput);
   const [productArray, setProductArray] = useState();
   const category = useSelector((state) => state.search.category);
-  const userId = useSelector((state) => state.user.userid);
+  const user = useSelector((state) => state.user);
   useEffect(() => {
     requestProduct();
   }, [searchInput, category]);
@@ -77,10 +77,10 @@ export default function SearchPage() {
         </div>
       ) : (
         <div className={styles.initialView}>
-          <div>
+          {user.logInStatus&&(<div>
             <h1>Recommend For You</h1>
-            <ProductList type="CF" USER_ID={userId} limit="10" />
-          </div>
+            <ProductList type="CF" USER_ID={user.userid} limit="10" />
+          </div>)}
           <div>
             <h1>Hot Deals</h1>
             <ProductList category="toy" />
