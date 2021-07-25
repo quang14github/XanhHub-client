@@ -7,7 +7,6 @@ import {getHistory,confirmReceived} from '../API/index'
 export function useApplyJWT(){
     const test=React.useContext(JwtContext)
     const onSetJWT=({jwt})=>{
-        console.log('running',test);
         if(test?.setJWT){
 
             test.setJWT(jwt)

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ReactStars from "react-rating-stars-component";
 import ProductList from "Components/ProductList";
-import { useSelectCategory } from "Hooks";
+//import { useSelectCategory } from "Hooks";
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 export default function SearchPage() {

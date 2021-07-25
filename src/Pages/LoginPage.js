@@ -34,10 +34,7 @@ export default function LoginPage({canClose}) {
           });
           onSet({jwt})
           saveUser(res)
-        } else {
-          console.log("here");
-          alert(res.err);
-        }
+        } 
       });
     }else{
 
@@ -51,10 +48,7 @@ export default function LoginPage({canClose}) {
           });
           onSet({jwt})
           saveUser(res)
-        } else {
-          console.log("here");
-          alert(res.err);
-        }
+        } 
 
       })
     }
