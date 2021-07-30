@@ -7,37 +7,38 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ReactStars from "react-rating-stars-component";
 import ProductList from "Components/ProductList";
-import { useSelectCategory } from "Hooks";
+import useProduct from "Hooks/useProduct";
 const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 export default function SearchPage() {
-  const searchInput = useSelector((state) => state.search.searchInput);
-  const [productArray, setProductArray] = useState();
-  const category = useSelector((state) => state.search.category);
+  const productArray = useProduct();
+  // const searchInput = useSelector((state) => state.search.searchInput);
+  // const [productArray, setProductArray] = useState();
+  // const category = useSelector((state) => state.search.category);
   const userId = useSelector((state) => state.user.userid);
-  useEffect(() => {
-    requestProduct();
-  }, [searchInput, category]);
-  async function requestProduct() {
-    const res = await fetch(
-      searchInput
-        ? `http://207.46.145.28/v1/product/search?keyword=${searchInput}`
-        : `http://207.46.145.28/v1/product/all`
-    );
-    const json = await res.json();
-    setProductArray(() => {
-      if (category && searchInput)
-        return json
-          .filter((e) => e.item.CATEGORY === category || category === "all")
-          .map((e) => e.item);
-      if (category && !searchInput)
-        return json.filter(
-          (e) => e.CATEGORY === category || category === "all"
-        );
-      if (!category && searchInput) return json.map((e) => e.item);
-      return "";
-    });
-  }
+  // useEffect(() => {
+  //   requestProduct();
+  // }, [searchInput, category]);
+  // async function requestProduct() {
+  //   const res = await fetch(
+  //     searchInput
+  //       ? `http://207.46.145.28/v1/product/search?keyword=${searchInput}`
+  //       : `http://207.46.145.28/v1/product/all`
+  //   );
+  //   const json = await res.json();
+  //   setProductArray(() => {
+  //     if (category && searchInput)
+  //       return json
+  //         .filter((e) => e.item.CATEGORY === category || category === "all")
+  //         .map((e) => e.item);
+  //     if (category && !searchInput)
+  //       return json.filter(
+  //         (e) => e.CATEGORY === category || category === "all"
+  //       );
+  //     if (!category && searchInput) return json.map((e) => e.item);
+  //     return "";
+  //   });
+  // }
   return (
     <Layout>
       {/* <div> */}

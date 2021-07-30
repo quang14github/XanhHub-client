@@ -52,6 +52,7 @@ export default function ProductList({
       for (let i = 0; i < products.length; i++) {
         products[i] = await products[i];
       }
+      console.log(products);
       setProducts(products);
     } else if (category) {
       const data = await fetch("http://207.46.145.28/v1/product/all").then(

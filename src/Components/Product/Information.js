@@ -89,7 +89,9 @@ export default function Information({ product }) {
           <p className={styles.goTo}>GO TO:</p>
           <a href="#feature">Sustainability Features</a>
           <a href="#spec">Product Specifications</a>
-          <a href="#company">Learn More About Love Bottle</a>
+          <a href="#company">
+            Learn More About {entities.decode(companys[product.company].name)}
+          </a>
         </div>
       </div>
     </div>

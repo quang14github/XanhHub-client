@@ -9,39 +9,39 @@ import styles from "Assets/Stylesheets/SCSS/Components/ListInfo.module.scss";
 const Entities = require("html-entities").AllHtmlEntities;
 
 const entities = new Entities();
-export default function ListInfo(props) {
+export default function ListInfo({ product }) {
   const features = [
     {
       icon: feature_origin_icon,
       title: "ORIGIN",
-      list: props.product.feature__ORIGIN,
+      list: product.feature[0].ORIGIN,
     },
     {
       icon: feature_material_icon,
       title: "MATERIALS",
-      list: props.product.feature__MATERIALS,
+      list: product.feature[0].MATERIALS,
     },
     {
       icon: feature_end_of_life_icon,
       title: "END OF LIFE",
-      list: props.product.feature__END_OF_LIFE,
+      list: product.feature[0].END_OF_LIFE,
     },
   ];
   const specs = [
     {
       icon: spec_product_care,
       title: "PRODUCT CARE",
-      list: props.product.specifications__PRODUCT_CARE,
+      list: product.specifications[0].PRODUCT_CARE,
     },
     {
       icon: spec_additional_features,
       title: "ADDITIONAL FEATURES",
-      list: props.product.specifications__ADDITIONAL_FEATURES,
+      list: product.specifications[0].ADDITIONAL_FEATURES,
     },
     {
       icon: spec_returns,
       title: "RETURNS",
-      list: props.product.specifications__RETURNS,
+      list: product.specifications[0].RETURNS,
     },
   ];
   return (

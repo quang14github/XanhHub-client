@@ -7,19 +7,21 @@ import AboutCompany from "Components/Product/AboutCompany";
 import Review from "Components/Product/Review";
 import styles from "Assets/Stylesheets/SCSS/Pages/ProductPage.module.scss";
 import { useState } from "react";
+import useProduct from "Hooks/useProduct";
 export default function ProductPage(props) {
   const productid = props.match.params.productid;
-  const [thisProduct, setThisProduct] = useState();
-  useEffect(() => {
-    requestProduct();
-  }, [props]);
-  async function requestProduct() {
-    const res = await fetch(
-      `http://207.46.145.28/v1/product/byid?id=${productid}`
-    );
-    const json = await res.json();
-    setThisProduct(json);
-  }
+  const thisProduct = useProduct().filter((e) => e.SID == productid)[0];
+  // const [thisProduct, setThisProduct] = useState();
+  // useEffect(() => {
+  //   requestProduct();
+  // }, [props]);
+  // async function requestProduct() {
+  //   const res = await fetch(
+  //     `http://207.46.145.28/v1/product/byid?id=${productid}`
+  //   );
+  //   const json = await res.json();
+  //   setThisProduct(json);
+  // }
   return (
     <Layout>
       {thisProduct && !thisProduct.err ? (
@@ -27,7 +29,10 @@ export default function ProductPage(props) {
           <div className={styles.product}>
             <div className={styles.main}>
               <Information product={thisProduct} />
-              <RelatedProduct SID={thisProduct.SID} cat={thisProduct.CATEGORY}/>
+              {/* <RelatedProduct
+                SID={thisProduct.SID}
+                cat={thisProduct.CATEGORY}
+              /> */}
             </div>
           </div>
           <ListInfo product={thisProduct} />
